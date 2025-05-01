@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../routes.dart'; // Example page
+import '../routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,12 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'My Flutter Web App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routerConfig: AppRouter.router, // Your declarative route setup
-      debugShowCheckedModeBanner: false,
+      routerConfig: AppRouter.router,
+      debugShowCheckedModeBanner: true,
     );
   }
 }
