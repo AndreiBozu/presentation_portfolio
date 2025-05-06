@@ -1,6 +1,5 @@
 import 'package:go_router/go_router.dart';
-
-import 'presentation/pages/home_page.dart';
+import 'package:presentation_portfolio/presentation/pages/landing_page.dart';
 
 
 class AppRouter {
@@ -8,7 +7,7 @@ class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const HomePage(),
+        builder: (context, state) => const LandingPage(),
       ),
     ],
   );
