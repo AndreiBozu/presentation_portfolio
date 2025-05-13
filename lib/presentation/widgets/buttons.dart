@@ -32,7 +32,6 @@ class Buttons {
       ),
     );
   }
-
   static IconButton iconButton({
     required String icon,
     required VoidCallback? onPressed,
@@ -43,6 +42,66 @@ class Buttons {
         "assets/icons/social-linkedin.svg",
         width: 18.sp,
         colorFilter: ColorFilter.mode(AppColor.grey, BlendMode.srcIn),
+      )
+    );
+  }
+  static TextButton squareTextButton({
+    required String text,
+    required VoidCallback? onPressed,
+    Color backgroundColor = AppColor.greenDark,
+    Color? borderColor,
+    Color textColor = AppColor.grey,
+    Widget? prefixIcon,
+    Widget? suffixIcon,
+    bool enableShadow = false,
+  }) {
+    return TextButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.w),
+          color: backgroundColor,
+          border: Border.all(width: 1, color: borderColor ?? Colors.transparent),
+          boxShadow: enableShadow ? [
+            BoxShadow(
+              color: backgroundColor.withValues(alpha: 0.25),
+              spreadRadius: 10,
+              blurRadius: 14,
+              offset: const Offset(0, 4), // changes position of shadow
+            ),
+          ] : null,
+        ),
+        padding: EdgeInsets.symmetric(
+          vertical: 21.h,
+          horizontal: 64.w
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if(prefixIcon != null) ...[
+              prefixIcon,
+              SizedBox(width: 7.w)
+            ],
+            Text(
+              text,
+              style: TextStyle(
+                height: 1,
+                color: textColor,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600
+              ),
+            ),
+            if(suffixIcon != null) ...[
+              SizedBox(width: 7.w),
+              suffixIcon,
+            ],
+          ],
+        ),
       )
     );
   }
