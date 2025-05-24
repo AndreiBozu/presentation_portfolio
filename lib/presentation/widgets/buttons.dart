@@ -54,7 +54,14 @@ class Buttons {
     Widget? prefixIcon,
     Widget? suffixIcon,
     bool enableShadow = false,
+    double? verticalPadding,
+    double? horizontalPadding,
+    double? textSize
   }) {
+    final double verticalPaddingBTN = verticalPadding ?? 21.h;
+    final double horizontalPaddingBTN = horizontalPadding ?? 64.w;
+    final double textSizeBTN = textSize ?? 16.sp;
+
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
@@ -76,8 +83,8 @@ class Buttons {
           ] : null,
         ),
         padding: EdgeInsets.symmetric(
-          vertical: 21.h,
-          horizontal: 64.w
+          vertical: verticalPaddingBTN,
+          horizontal: horizontalPaddingBTN
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,7 +99,7 @@ class Buttons {
               style: TextStyle(
                 height: 1,
                 color: textColor,
-                fontSize: 16.sp,
+                fontSize: textSizeBTN,
                 fontWeight: FontWeight.w600
               ),
             ),
