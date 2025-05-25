@@ -20,7 +20,7 @@ class CaseStudies extends StatelessWidget {
           SizedBox(height: 80.h),
           Text(
             "Case studies",
-            style: TextStyles.sectionTitleName,
+            style: TextStyles.sectionTitleNameBlack,
           ),
           SizedBox(height: 25.h),
           SizedBox(

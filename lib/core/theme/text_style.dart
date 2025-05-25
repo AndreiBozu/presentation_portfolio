@@ -10,8 +10,14 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     height: 1
   );
-  static final TextStyle sectionTitleName = TextStyle(
+  static final TextStyle sectionTitleNameBlack = TextStyle(
       color: AppColor.black,
+      fontSize: 34.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
+  );
+  static final TextStyle sectionTitleNameWhite = TextStyle(
+      color: AppColor.white,
       fontSize: 34.sp,
       fontWeight: FontWeight.w700,
       height: 1
