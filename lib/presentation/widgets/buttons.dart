@@ -35,12 +35,13 @@ class Buttons {
   static IconButton iconButton({
     required String icon,
     required VoidCallback? onPressed,
+    double? width,
   }) {
     return IconButton(
       onPressed: onPressed,
       icon: SvgPicture.asset(
-        "assets/icons/social-linkedin.svg",
-        width: 18.sp,
+        "assets/icons/$icon.svg",
+        width: width ?? 18.sp,
         colorFilter: ColorFilter.mode(AppColor.grey, BlendMode.srcIn),
       )
     );

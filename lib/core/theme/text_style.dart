@@ -42,4 +42,10 @@ class TextStyles {
       fontWeight: FontWeight.w700,
       height: 1
   );
+  static final TextStyle recentWorkProjectTitleName = TextStyle(
+      color: AppColor.white,
+      fontSize: 24.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
+  );
 }

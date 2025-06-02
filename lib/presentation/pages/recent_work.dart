@@ -7,6 +7,7 @@ import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/data/repositories/recent_work_items_repository.dart';
 import 'package:presentation_portfolio/presentation/pages/recent_work_components/recent_work_item.dart';
+import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
 class RecentWork extends StatelessWidget {
   const RecentWork({super.key});
@@ -29,7 +30,7 @@ class RecentWork extends StatelessWidget {
             "Recent work",
             style: TextStyles.sectionTitleNameWhite,
           ),
-          SizedBox(height: 25.h),
+          SizedBox(height: 20.h),
           SizedBox(
             width: ScreenUtil().screenWidth * 0.5,
             child: Text(
@@ -38,34 +39,67 @@ class RecentWork extends StatelessWidget {
               style: TextStyles.paragraphGrey,
             ),
           ),
-          SizedBox(height: 40.h),
-          SizedBox(
-            width: 900.w,
-            child: CarouselSlider(
-                items: works.map((RecentWorkItemModel workItem) {
-                  return Builder(
-                      builder: (BuildContext context) {
-                        return RecentWorkItem();
-                      }
-                  );
-                }).toList(),
-                carouselController: buttonCarouselController,
-                options: CarouselOptions(
-                  height: 450.h,
-                  aspectRatio: 0.9,
-                  viewportFraction: 0.48,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  reverse: true,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 8),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enlargeCenterPage: false,
-                  enlargeFactor: 0,
-                  scrollDirection: Axis.horizontal,
-                )
-            ),
+          SizedBox(height: 30.h),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: 900.w,
+                child: CarouselSlider(
+                  items: works.map((final RecentWorkItemModel workItem) {
+                    return Builder(
+                        builder: (BuildContext context) {
+                          return RecentWorkItem(
+                            workKey: workItem.key,
+                            image: workItem.imageName,
+                            title: workItem.title,
+                            description: workItem.description,
+                          );
+                        }
+                    );
+                  }).toList(),
+                  carouselController: buttonCarouselController,
+                  options: CarouselOptions(
+                    height: 470.h,
+                    aspectRatio: 1,
+                    viewportFraction: 1,
+                    initialPage: 0,
+                    enableInfiniteScroll: true,
+                    autoPlay: true,
+                    autoPlayInterval: const Duration(seconds: 7),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 700),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enlargeCenterPage: false,
+                    enlargeFactor: 0,
+                    scrollDirection: Axis.horizontal,
+                  )
+                ),
+              ),
+              Positioned(
+                left: 0,
+                child: Buttons.iconButton(
+                  width: 28.sp,
+                  icon: "back_icon",
+                  onPressed: () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      buttonCarouselController.nextPage();
+                    });
+                  }
+                ),
+              ),
+              Positioned(
+                right: 0,
+                child: Buttons.iconButton(
+                  width: 28.sp,
+                  icon: "forward_icon",
+                  onPressed: () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      buttonCarouselController.previousPage();
+                    });
+                  }
+                ),
+              )
+            ],
           )
         ],
       )
