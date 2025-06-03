@@ -34,7 +34,7 @@ class RecentWork extends StatelessWidget {
           SizedBox(
             width: ScreenUtil().screenWidth * 0.5,
             child: Text(
-              Constant.caseStudiesDescription,
+              Constant.recentWorksDescription,
               textAlign: TextAlign.center,
               style: TextStyles.paragraphGrey,
             ),
