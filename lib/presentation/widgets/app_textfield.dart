@@ -15,6 +15,7 @@ class AppTextField extends StatelessWidget {
     this.inputTextColor = AppColor.black,
     this.inputType = TextInputType.text,
     this.error = false,
+    required this.onChange
   });
   final String? label;
   final String placeHolder;
@@ -25,6 +26,7 @@ class AppTextField extends StatelessWidget {
   final Color inputTextColor;
   final TextInputType inputType;
   final bool error;
+  final Function(String) onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,9 @@ class AppTextField extends StatelessWidget {
               border: Border.all(width: error ? 1 : 0, color: error ? AppColor.error700 : Colors.transparent)
             ),
             child: TextField(
+              onChanged: (String text) {
+                onChange(text);
+              },
               maxLines: maxLines,
               keyboardType: inputType,
               style: TextStyle(
