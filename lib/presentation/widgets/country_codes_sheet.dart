@@ -34,10 +34,9 @@ class _CountryCodesSheetState extends State<CountryCodesSheet> {
       ),
       child: Padding(
         padding: EdgeInsets.only(
-            left: 20.sp,
-            right: 20.sp,
-            top: 12.sp,
-            bottom: MediaQuery.of(context).padding.bottom + 10
+          left: 20.sp,
+          right: 20.sp,
+          top: 12.sp,
         ),
         child: SingleChildScrollView(
           child: Column(

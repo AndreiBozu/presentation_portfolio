@@ -21,9 +21,9 @@ class LandingPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  // const HomePage(),
-                  // const CaseStudies(),
-                  // const RecentWork(),
+                  const HomePage(),
+                  const CaseStudies(),
+                  const RecentWork(),
                   const GetInTouch()
                 ],
               ),

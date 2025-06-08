@@ -33,8 +33,20 @@ class PhoneTextField extends StatefulWidget {
 }
 
 class _PhoneTextFieldState extends State<PhoneTextField> {
+  final GlobalKey _key = GlobalKey();
   final TextEditingController controller = TextEditingController();
   Map selectedCountry = countryCodes.where((country) => country["countryCode"] == "40").first;
+  double countryCodeFieldHeight = 36.sp;
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox box = _key.currentContext!.findRenderObject() as RenderBox;
+      countryCodeFieldHeight = box.size.height;
+      setState(() {});
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +84,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           Stack(
             children: [
               Container(
+                key: _key,
                 width: widget.width ?? 350.w,
                 decoration: BoxDecoration(
                     color: widget.error ? AppColor.error100 : widget.backgroundColor,
@@ -121,7 +134,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                 ),
                 child: SizedBox(
                   width: 60.w,
-                  height: 36.sp,
+                  height: countryCodeFieldHeight,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

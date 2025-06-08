@@ -9,12 +9,19 @@ import 'package:presentation_portfolio/data/repositories/recent_work_items_repos
 import 'package:presentation_portfolio/presentation/pages/recent_work_components/recent_work_item.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
-class RecentWork extends StatelessWidget {
+class RecentWork extends StatefulWidget {
   const RecentWork({super.key});
 
   @override
+  State<RecentWork> createState() => _RecentWorkState();
+}
+
+class _RecentWorkState extends State<RecentWork> {
+  final CarouselSliderController buttonCarouselController = CarouselSliderController();
+
+
+  @override
   Widget build(BuildContext context) {
-    final CarouselSliderController buttonCarouselController = CarouselSliderController();
     final List<RecentWorkItemModel> works = RecentWorkItemsRepository.data;
 
     return Container(
@@ -46,6 +53,7 @@ class RecentWork extends StatelessWidget {
               SizedBox(
                 width: 900.w,
                 child: CarouselSlider(
+                  carouselController: buttonCarouselController,
                   items: works.map((final RecentWorkItemModel workItem) {
                     return Builder(
                         builder: (BuildContext context) {
@@ -58,7 +66,6 @@ class RecentWork extends StatelessWidget {
                         }
                     );
                   }).toList(),
-                  carouselController: buttonCarouselController,
                   options: CarouselOptions(
                     height: 470.h,
                     aspectRatio: 1,
@@ -82,7 +89,7 @@ class RecentWork extends StatelessWidget {
                   icon: "back_icon",
                   onPressed: () {
                     WidgetsBinding.instance.addPostFrameCallback((_) {
-                      buttonCarouselController.nextPage();
+                      buttonCarouselController.previousPage();
                     });
                   }
                 ),
@@ -94,7 +101,7 @@ class RecentWork extends StatelessWidget {
                   icon: "forward_icon",
                   onPressed: () {
                     WidgetsBinding.instance.addPostFrameCallback((_) {
-                      buttonCarouselController.previousPage();
+                      buttonCarouselController.nextPage();
                     });
                   }
                 ),
