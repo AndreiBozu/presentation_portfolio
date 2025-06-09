@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
@@ -57,7 +58,7 @@ class RecentWorkItem extends StatelessWidget {
             children: [
               Buttons.squareTextButton(
                   onPressed: () {
-
+                    context.go("/recent-work");
                   },
                   enableShadow: true,
                   textColor: AppColor.white,

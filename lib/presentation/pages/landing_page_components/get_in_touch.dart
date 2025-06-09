@@ -18,34 +18,14 @@ class GetInTouch extends StatefulWidget {
 }
 
 class _GetInTouchState extends State<GetInTouch> {
-  GetInTouchFormValidationResponse? response;
   String email = "";
   String phone = "";
   String message = "";
+  bool emailError = false;
+  bool messageError = false;
 
   @override
   Widget build(BuildContext context) {
-    if(response != null) {
-      void showModal() {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return Dialog(
-              child: AlertModal(
-                dismissModal: (bool dispose) {
-                  if(dispose) {
-                    setState(() => response = null);
-                  }
-                },
-                isSuccess: response!.isSuccess,
-                message: response!.message,
-              )
-            );
-          },
-        );
-      }
-    }
-
     return Container(
       width: ScreenUtil().screenWidth,
       height: ScreenUtil().screenHeight,
@@ -69,9 +49,13 @@ class _GetInTouchState extends State<GetInTouch> {
           SizedBox(height: 50.h),
           AppTextField(
             label: "Email",
+            error: emailError,
             placeHolder: "Enter your email",
             inputType: TextInputType.emailAddress,
             onChange: (String text) {
+              if(emailError) {
+                emailError = false;
+              }
               setState(() => email = text);
             },
           ),
@@ -84,11 +68,15 @@ class _GetInTouchState extends State<GetInTouch> {
           ),
           SizedBox(height: 20.h),
           AppTextField(
+            error: messageError,
             label: "Message",
             placeHolder: "Enter your message",
             inputType: TextInputType.text,
             maxLines: 6,
             onChange: (String text) {
+              if(messageError) {
+                messageError = false;
+              }
               setState(() => message = text);
             },
           ),
@@ -97,15 +85,33 @@ class _GetInTouchState extends State<GetInTouch> {
             width: 350.w,
             child: Buttons.squareTextButton(
               onPressed: () {
-                response = GetInTouchUseCase().validateData(
+                GetInTouchUseCase().validateData(
                   form: GetInTouchFormModel(
                     email: email,
                     phone: phone,
                     message: message
                   )
-                );
-                print("==========+${response!.isSuccess}");
-                setState(() {});
+                ).then((GetInTouchFormValidationResponse response) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    if(!response.isSuccess) {
+                      setState(() {
+                        emailError = response.isEmailError;
+                        messageError = response.isMessageError;
+                      });
+                    }
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                          child: AlertModal(
+                            isSuccess: response.isSuccess,
+                            message: response.message,
+                          )
+                        );
+                      },
+                    );
+                  });
+                });
               },
               textColor: AppColor.white,
               backgroundColor: AppColor.greenDark,

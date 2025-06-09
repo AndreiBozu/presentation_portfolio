@@ -3,7 +3,7 @@ import 'package:presentation_portfolio/data/models/get_in_touch_form_model.dart'
 
 
 class GetInTouchUseCase {
-  GetInTouchFormValidationResponse validateData({required GetInTouchFormModel form}) {
+  Future<GetInTouchFormValidationResponse> validateData({required GetInTouchFormModel form}) async {
     if(form.email.isEmpty || !(_isValidEmail(form.email))) {
       return GetInTouchFormValidationResponse(
         isSuccess: false,

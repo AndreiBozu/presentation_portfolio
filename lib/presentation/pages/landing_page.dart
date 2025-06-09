@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:presentation_portfolio/presentation/pages/case_studies.dart';
-import 'package:presentation_portfolio/presentation/pages/get_in_touch.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:presentation_portfolio/presentation/pages/home_page.dart';
-import 'package:presentation_portfolio/presentation/pages/recent_work.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
+
+import 'landing_page_components/case_studies.dart';
+import 'landing_page_components/get_in_touch.dart';
+import 'landing_page_components/home.dart';
+import 'landing_page_components/recent_work.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -21,7 +22,7 @@ class LandingPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const HomePage(),
+                  const Home(),
                   const CaseStudies(),
                   const RecentWork(),
                   const GetInTouch()

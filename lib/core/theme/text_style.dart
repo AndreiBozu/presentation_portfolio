@@ -48,4 +48,10 @@ class TextStyles {
       fontWeight: FontWeight.w700,
       height: 1
   );
+  static final TextStyle getInTouchResponseTitle = TextStyle(
+      color: AppColor.black,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
+  );
 }

@@ -6,8 +6,9 @@ import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/data/repositories/recent_work_items_repository.dart';
-import 'package:presentation_portfolio/presentation/pages/recent_work_components/recent_work_item.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
+
+import 'recent_work_components/recent_work_item.dart';
 
 class RecentWork extends StatefulWidget {
   const RecentWork({super.key});

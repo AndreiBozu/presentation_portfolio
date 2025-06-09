@@ -4,10 +4,10 @@ import 'package:presentation_portfolio/core/constant.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 
-import '../widgets/buttons.dart';
+import '../../widgets/buttons.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {

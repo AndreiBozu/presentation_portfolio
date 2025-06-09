@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:presentation_portfolio/presentation/pages/case_studies_components/project_description.dart';
-import 'package:presentation_portfolio/presentation/pages/case_studies_components/project_image.dart';
+
+import 'project_description.dart';
+import 'project_image.dart';
+
 
 class ProjectPresentation extends StatefulWidget {
   const ProjectPresentation({

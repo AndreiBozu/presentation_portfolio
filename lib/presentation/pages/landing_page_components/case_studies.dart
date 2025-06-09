@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/core/constant.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/presentation/pages/case_studies_components/project_presentation.dart';
+
+import 'case_studies_components/project_presentation.dart';
 
 class CaseStudies extends StatelessWidget {
   const CaseStudies({super.key});
