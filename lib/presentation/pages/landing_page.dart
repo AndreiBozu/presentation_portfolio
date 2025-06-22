@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/repositories/case_study_repository.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
 
 import 'landing_page_components/case_studies.dart';
@@ -12,6 +14,8 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<CaseStudyModelItem> caseStudyItems = CaseStudyRepository.data;
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
@@ -23,7 +27,7 @@ class LandingPage extends StatelessWidget {
               child: Column(
                 children: [
                   const Home(),
-                  const CaseStudies(),
+                  CaseStudies(caseStudyItems: caseStudyItems),
                   const RecentWork(),
                   const GetInTouch()
                 ],

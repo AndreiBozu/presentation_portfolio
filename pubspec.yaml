@@ -16,6 +16,7 @@ dependencies:
   flutter_svg: ^2.1.0
   carousel_slider: ^5.0.0
   country_flags: ^3.2.0
+  youtube_player_iframe: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +28,5 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/content/
   uses-material-design: true

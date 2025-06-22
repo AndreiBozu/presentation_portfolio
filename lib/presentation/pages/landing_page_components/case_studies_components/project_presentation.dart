@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 
 import 'project_description.dart';
 import 'project_image.dart';
@@ -8,20 +9,10 @@ import 'project_image.dart';
 class ProjectPresentation extends StatefulWidget {
   const ProjectPresentation({
     super.key,
-    required this.title,
-    required this.description,
-    required this.companyName,
-    required this.imageName,
-    required this.colorLightTheme,
-    required this.colorDarkTheme,
     this.reverse = false,
+    required this.caseStudyItem
   });
-  final String title;
-  final String description;
-  final String companyName;
-  final String imageName;
-  final Color colorLightTheme;
-  final Color colorDarkTheme;
+  final CaseStudyModelItem caseStudyItem;
   final bool reverse;
 
   @override
@@ -30,6 +21,13 @@ class ProjectPresentation extends StatefulWidget {
 
 class _ProjectPresentationState extends State<ProjectPresentation> {
   bool _isHovered = false;
+  late final CaseStudyModelItem caseStudyItem;
+  
+  @override
+  void initState() {
+    caseStudyItem = widget.caseStudyItem;
+    super.initState();
+  }
 
   void _onHoverChanged({required bool enabled}) {
     setState(() => _isHovered = enabled);
@@ -37,6 +35,9 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
 
   @override
   Widget build(BuildContext context) {
+    final lightColor = int.parse("0xFF${caseStudyItem.lightColorHex}");
+    final darkColor = int.parse("0xFF${caseStudyItem.darkColorHex}");
+
     return MouseRegion(
       onEnter: (PointerEnterEvent event) => _onHoverChanged(enabled: true),
       onExit: (PointerExitEvent event) => _onHoverChanged(enabled: false),
@@ -45,17 +46,15 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ProjectImage(
-            colorLightTheme: widget.colorLightTheme,
-            colorDarkTheme: widget.colorDarkTheme,
-            imageName: widget.imageName,
+            colorLightTheme: Color(lightColor),
+            colorDarkTheme: Color(darkColor),
+            imageName: caseStudyItem.imagePath,
             isHovered: _isHovered,
           ),
           ProjectDescription(
-            title: widget.title,
-            description: widget.description,
-            companyName: widget.companyName,
-            colorLightTheme: widget.colorLightTheme,
-            colorDarkTheme: widget.colorDarkTheme
+            caseStudyItem: caseStudyItem,
+            colorLightTheme: Color(lightColor),
+            colorDarkTheme: Color(darkColor)
           ),
         ],
       ) : Row(
@@ -63,16 +62,14 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ProjectDescription(
-            title: widget.title,
-            description: widget.description,
-            companyName: widget.companyName,
-            colorLightTheme: widget.colorLightTheme,
-            colorDarkTheme: widget.colorDarkTheme
+            caseStudyItem: caseStudyItem,
+            colorLightTheme: Color(lightColor),
+            colorDarkTheme: Color(darkColor)
           ),
           ProjectImage(
-            colorLightTheme: widget.colorLightTheme,
-            colorDarkTheme: widget.colorDarkTheme,
-            imageName: widget.imageName,
+            colorLightTheme:  Color(lightColor),
+            colorDarkTheme: Color(darkColor),
+            imageName: caseStudyItem.imagePath,
             isHovered: _isHovered,
           )
         ],

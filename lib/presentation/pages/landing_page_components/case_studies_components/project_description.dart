@@ -3,22 +3,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
 class ProjectDescription extends StatelessWidget {
   const ProjectDescription({
     super.key,
-    required this.title,
-    required this.description,
-    required this.companyName,
     required this.colorLightTheme,
     required this.colorDarkTheme,
+    required this.caseStudyItem
   });
-  final String title;
-  final String description;
-  final String companyName;
   final Color colorLightTheme;
   final Color colorDarkTheme;
+  final CaseStudyModelItem caseStudyItem;
 
   @override
   Widget build(BuildContext context) {
@@ -36,27 +33,27 @@ class ProjectDescription extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            companyName,
+            caseStudyItem.companyName,
             style: TextStyles.caseStudiesCompanyTitleStyle(textColor: colorDarkTheme),
           )
         ),
         SizedBox(height: 25.h),
         Text(
-          title,
+          caseStudyItem.title,
           style: TextStyles.caseStudiesProjectTitleName,
         ),
         SizedBox(height: 20.h),
         SizedBox(
           width: 450.w,
           child: Text(
-            description,
+            caseStudyItem.description,
             style: TextStyles.paragraphGrey,
           ),
         ),
         SizedBox(height: 35.h),
         Buttons.squareTextButton(
           onPressed: () {
-            context.go("/case-study");
+            context.go("/case-study", extra: caseStudyItem);
           },
           textColor: AppColor.white,
           backgroundColor: colorDarkTheme,

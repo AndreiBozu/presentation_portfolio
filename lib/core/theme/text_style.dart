@@ -4,11 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'app_color.dart';
 
 class TextStyles {
-  static final TextStyle headerName = TextStyle(
+  static final TextStyle headerNameWhite = TextStyle(
     color: AppColor.white,
     fontSize: 44.sp,
     fontWeight: FontWeight.w700,
     height: 1
+  );
+  static final TextStyle headerNameBlack = TextStyle(
+      color: AppColor.black,
+      fontSize: 44.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
   );
   static final TextStyle sectionTitleNameBlack = TextStyle(
       color: AppColor.black,

@@ -43,7 +43,7 @@ class ProjectImage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6.sp),
                 child: Image.asset(
-                  "assets/images/$imageName",
+                  "assets/$imageName",
                   fit: BoxFit.fill,
                 ),
               ),

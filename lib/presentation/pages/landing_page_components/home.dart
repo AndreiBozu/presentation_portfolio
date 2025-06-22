@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                   children: [
                     Text(
                       Constant.myName,
-                      style: TextStyles.headerName,
+                      style: TextStyles.headerNameWhite,
                     ),
                     SizedBox(height: 15.h),
                     Text(

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/presentation/pages/landing_page.dart';
 import 'package:presentation_portfolio/presentation/pages/recent_work_page.dart';
 import 'package:presentation_portfolio/presentation/pages/view_case_study_page.dart';
@@ -17,7 +18,10 @@ class AppRouter {
       ),
       GoRoute(
         path: '/case-study',
-        builder: (context, state) => const ViewCaseStudyPage(),
+        builder: (context, state) {
+          final CaseStudyModelItem caseStudyItem = state.extra as CaseStudyModelItem;
+          return ViewCaseStudyPage(caseStudyItem: caseStudyItem);
+        }
       ),
     ],
   );
