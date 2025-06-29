@@ -1,6 +1,7 @@
 
 class CaseStudyModelItem {
   const CaseStudyModelItem({
+    required this.id,
     required this.title,
     required this.imagePath,
     required this.description,
@@ -14,6 +15,7 @@ class CaseStudyModelItem {
     this.webLink,
     required this.extraItemsList
   });
+  final String id;
   final String title;
   final String imagePath;
   final String description;

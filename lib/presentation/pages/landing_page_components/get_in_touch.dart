@@ -126,17 +126,6 @@ class _GetInTouchState extends State<GetInTouch> {
               )
             ),
           ),
-          const Spacer(),
-          Container(
-            width: ScreenUtil().screenWidth,
-            height: 70.h,
-            color: AppColor.darkElement,
-            alignment: Alignment.center,
-            child: Text(
-              "Made with 💖",
-              style: TextStyles.paragraphGrey,
-            ),
-          )
         ],
       )
     );
