@@ -31,10 +31,10 @@ class ExtraInfo extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 20.h,
-        horizontal: 60.w
+        horizontal: 120.w
       ),
       child: Row(
-        crossAxisAlignment: reverse ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if(reverse) ...[
             Expanded(
@@ -43,6 +43,7 @@ class ExtraInfo extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 20.h),
                     Text(
                       item.title,
                       style: TextStyles.caseStudiesExtraItemTitle,
@@ -88,7 +89,8 @@ class ExtraInfo extends StatelessWidget {
                   Text(
                     item.description,
                     style: TextStyles.paragraphGrey,
-                  )
+                  ),
+                  SizedBox(height: 20.h),
                 ],
               ),
             )

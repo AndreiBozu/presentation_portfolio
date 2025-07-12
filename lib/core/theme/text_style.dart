@@ -34,12 +34,12 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       height: 1.6
   );
-  static TextStyle caseStudiesCompanyTitleStyle({Color textColor = AppColor.black}) {
+  static TextStyle caseStudiesCompanyTitleStyle({Color textColor = AppColor.white}) {
     return TextStyle(
       color: textColor,
       fontSize: 12.sp,
       height: 1,
-      fontWeight: FontWeight.w600
+      fontWeight: FontWeight.w500
     );
   }
   static final TextStyle caseStudiesProjectTitleName = TextStyle(

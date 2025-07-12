@@ -56,7 +56,7 @@ class CaseStudyPresentation extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: 30.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

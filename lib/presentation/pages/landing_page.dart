@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/data/repositories/case_study_repository.dart';
+import 'package:presentation_portfolio/presentation/pages/landing_page_components/skills.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
 
@@ -29,6 +30,7 @@ class LandingPage extends StatelessWidget {
                 children: [
                   const Home(),
                   CaseStudies(caseStudyItems: caseStudyItems),
+                  const Skills(),
                   const RecentWork(),
                   const GetInTouch(),
                   const Footer()

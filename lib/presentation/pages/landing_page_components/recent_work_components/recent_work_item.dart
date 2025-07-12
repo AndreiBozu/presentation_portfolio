@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
+import 'package:presentation_portfolio/presentation/providers/recent_work_item.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
 
-class RecentWorkItem extends StatelessWidget {
+class RecentWorkItem extends ConsumerWidget {
   const RecentWorkItem({
     super.key,
-    required this.image,
-    required this.title,
-    required this.description,
-    required this.workKey
+    required this.recentWorkItem,
   });
-  final String image;
-  final String title;
-  final String description;
-  final String workKey;
+  final RecentWorkItemModel recentWorkItem;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         SizedBox(
@@ -28,7 +25,7 @@ class RecentWorkItem extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.sp),
             child: Image.asset(
-              "assets/images/$image",
+              "assets/images/${recentWorkItem.imageName}",
               fit: BoxFit.fill,
             ),
           ),
@@ -37,7 +34,7 @@ class RecentWorkItem extends StatelessWidget {
         SizedBox(
           width: 530.w,
           child: Text(
-            title,
+            recentWorkItem.title,
             textAlign: TextAlign.start,
             style: TextStyles.recentWorkProjectTitleName,
           ),
@@ -46,7 +43,7 @@ class RecentWorkItem extends StatelessWidget {
         SizedBox(
           width: 530.w,
           child: Text(
-            description,
+            recentWorkItem.description,
             textAlign: TextAlign.start,
             style: TextStyles.paragraphGrey,
           ),
@@ -58,9 +55,10 @@ class RecentWorkItem extends StatelessWidget {
             children: [
               Buttons.squareTextButton(
                   onPressed: () {
-                    context.go("/recent-work");
+                    context.go("/recent-work/${recentWorkItem.key}");
+                    ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
                   },
-                  enableShadow: true,
+                  enableShadow: false,
                   textColor: AppColor.white,
                   backgroundColor: AppColor.greenDark,
                   text: "Learn more",

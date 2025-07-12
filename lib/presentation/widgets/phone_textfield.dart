@@ -14,7 +14,7 @@ class PhoneTextField extends StatefulWidget {
     super.key,
     this.label,
     this.width,
-    this.backgroundColor = AppColor.lightGrey,
+    this.backgroundColor = AppColor.white,
     this.placeholderTextColor = AppColor.grey,
     this.inputTextColor = AppColor.black,
     this.error = false,

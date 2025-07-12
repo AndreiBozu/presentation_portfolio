@@ -27,8 +27,8 @@ class _RecentWorkState extends State<RecentWork> {
 
     return Container(
       width: ScreenUtil().screenWidth,
-      height: ScreenUtil().screenHeight,
-      color: AppColor.black,
+      constraints: BoxConstraints(minHeight: ScreenUtil().screenHeight),
+      color: AppColor.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +36,7 @@ class _RecentWorkState extends State<RecentWork> {
           SizedBox(height: 80.h),
           Text(
             "Recent work",
-            style: TextStyles.sectionTitleNameWhite,
+            style: TextStyles.sectionTitleNameBlack,
           ),
           SizedBox(height: 20.h),
           SizedBox(
@@ -57,14 +57,11 @@ class _RecentWorkState extends State<RecentWork> {
                   carouselController: buttonCarouselController,
                   items: works.map((final RecentWorkItemModel workItem) {
                     return Builder(
-                        builder: (BuildContext context) {
-                          return RecentWorkItem(
-                            workKey: workItem.key,
-                            image: workItem.imageName,
-                            title: workItem.title,
-                            description: workItem.description,
-                          );
-                        }
+                      builder: (BuildContext context) {
+                        return RecentWorkItem(
+                          recentWorkItem: workItem,
+                        );
+                      }
                     );
                   }).toList(),
                   options: CarouselOptions(

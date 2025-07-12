@@ -29,13 +29,13 @@ class _GetInTouchState extends State<GetInTouch> {
     return Container(
       width: ScreenUtil().screenWidth,
       height: ScreenUtil().screenHeight,
-      color: AppColor.white,
+      color: AppColor.black,
       child: Column(
         children: [
           SizedBox(height: 80.h),
           Text(
             "Get in Touch",
-            style: TextStyles.sectionTitleNameBlack,
+            style: TextStyles.sectionTitleNameWhite,
           ),
           SizedBox(height: 20.h),
           SizedBox(

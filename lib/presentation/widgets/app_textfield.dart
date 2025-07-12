@@ -10,7 +10,7 @@ class AppTextField extends StatelessWidget {
     this.placeHolder = "",
     this.maxLines = 1,
     this.width,
-    this.backgroundColor = AppColor.lightGrey,
+    this.backgroundColor = AppColor.white,
     this.placeholderTextColor = AppColor.grey,
     this.inputTextColor = AppColor.black,
     this.inputType = TextInputType.text,

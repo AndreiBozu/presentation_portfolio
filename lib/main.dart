@@ -13,7 +13,8 @@ Future<void> main() async {
   runApp(
     ProviderScope(
       child: ScreenUtilInit(
-        designSize: const Size(1280, 700),
+        useInheritedMediaQuery: true,
+        designSize: const Size(1280, 720),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (BuildContext context, child) {

@@ -42,7 +42,7 @@ class ViewCaseStudyPage extends ConsumerWidget {
                     padding: EdgeInsets.symmetric(horizontal: 120.w),
                     child: Column(
                       children: [
-                        SizedBox(height: 100.h),
+                        SizedBox(height: 120.h),
                         CaseStudyPresentation(
                           caseStudyItem: caseStudyItem,
                         ),
