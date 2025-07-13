@@ -31,4 +31,5 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/content/
+    - assets/skills/
   uses-material-design: true
