@@ -18,12 +18,12 @@ class RecentWork extends StatefulWidget {
 }
 
 class _RecentWorkState extends State<RecentWork> {
+  final List<RecentWorkItemModel> works = RecentWorkItemsRepository.data;
   final CarouselSliderController buttonCarouselController = CarouselSliderController();
 
 
   @override
   Widget build(BuildContext context) {
-    final List<RecentWorkItemModel> works = RecentWorkItemsRepository.data;
 
     return Container(
       width: ScreenUtil().screenWidth,
@@ -33,7 +33,7 @@ class _RecentWorkState extends State<RecentWork> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 80.h),
+          SizedBox(height: 100.h),
           Text(
             "Recent work",
             style: TextStyles.sectionTitleNameBlack,
@@ -105,7 +105,8 @@ class _RecentWorkState extends State<RecentWork> {
                 ),
               )
             ],
-          )
+          ),
+          SizedBox(height: 30.h),
         ],
       )
     );

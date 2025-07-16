@@ -34,6 +34,12 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       height: 1.6
   );
+  static final TextStyle paragraphMediumGrey = TextStyle(
+      color: AppColor.mediumGrey,
+      fontSize: 14.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.6
+  );
   static TextStyle caseStudiesCompanyTitleStyle({Color textColor = AppColor.white}) {
     return TextStyle(
       color: textColor,
@@ -58,6 +64,12 @@ class TextStyles {
       color: AppColor.white,
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,
+      height: 1
+  );
+  static final TextStyle skillTitle = TextStyle(
+      color: AppColor.mediumGrey,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w600,
       height: 1
   );
   static final TextStyle getInTouchResponseTitle = TextStyle(

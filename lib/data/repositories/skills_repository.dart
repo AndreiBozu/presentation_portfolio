@@ -69,6 +69,11 @@ class SkillsRepository {
       skillLevel: SkillLevel.good
     ),
     SkillItemModel(
+      title: "AWS",
+      icon: "aws",
+      skillLevel: SkillLevel.basic
+    ),
+    SkillItemModel(
       title: "Swift",
       icon: "swift",
       skillLevel: SkillLevel.basic
