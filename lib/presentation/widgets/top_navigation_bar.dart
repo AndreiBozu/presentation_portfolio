@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:presentation_portfolio/core/constant.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
+import 'package:presentation_portfolio/data/models/navigation_bar_button_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TopNavigationBar extends StatelessWidget {
   const TopNavigationBar({
     super.key,
+    required this.sections,
+    required this.callBack
   });
+  final List<NavigationBarButtonModel> sections;
+  final Function(NavigationBarButtonModel section) callBack;
 
   @override
   Widget build(BuildContext context) {
     const double borderRadius = 10.0;
+
+    void launchURL(String urlToLaunch) async {
+      final Uri url = Uri.parse(urlToLaunch);
+      if (!await launchUrl(url)) {
+        throw Exception('Could not launch $url');
+      }
+    }
 
     return Container(
       width: 1110.w,
@@ -35,30 +49,12 @@ class TopNavigationBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Buttons.textButton(
-                  text: "Home",
-                  onPressed: () {
-
-                  }
-                ),
-                Buttons.textButton(
-                  text: "Case studies",
-                  onPressed: () {
-
-                  }
-                ),
-                Buttons.textButton(
-                  text: "Recent work",
-                  onPressed: () {
-
-                  }
-                ),
-                Buttons.textButton(
-                  text: "Get in Touch",
-                  onPressed: () {
-
-                  }
-                )
+                for(final NavigationBarButtonModel section in sections) ...[
+                  Buttons.textButton(
+                    text: section.title,
+                    onPressed: () => callBack(section)
+                  ),
+                ]
               ],
             ),
           ),
@@ -69,7 +65,15 @@ class TopNavigationBar extends StatelessWidget {
                 Buttons.iconButton(
                   icon: "social-linkedin",
                   onPressed: () {
-
+                    launchURL(Constant.linkedinUrl);
+                  }
+                ),
+                SizedBox(width: 6.w),
+                Buttons.iconButton(
+                  icon: "github-fill",
+                  width: 20.sp,
+                  onPressed: () {
+                    launchURL(Constant.githubUrl);
                   }
                 )
               ],

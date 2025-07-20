@@ -14,4 +14,8 @@ class Constant {
   static const String invalidEmail = "The email format is incorrect, please fill in an existing email in the appropriate field.";
   static const String emptyMessage = "Please write a short message.";
   static const String successMessage = "The message was successfully sent, thanks for your attention!";
+
+  ///Links
+  static const String linkedinUrl = "https://www.linkedin.com/in/andrei-bozu-057408194/";
+  static const String githubUrl = "https://github.com/AndreiBozu";
 }

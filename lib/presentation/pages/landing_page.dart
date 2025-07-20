@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/navigation_bar_button_model.dart';
 import 'package:presentation_portfolio/data/repositories/case_study_repository.dart';
-import 'package:presentation_portfolio/presentation/pages/landing_page_components/skills.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
 
@@ -10,14 +10,79 @@ import 'landing_page_components/case_studies.dart';
 import 'landing_page_components/get_in_touch.dart';
 import 'landing_page_components/home.dart';
 import 'landing_page_components/recent_work.dart';
+import 'landing_page_components/skills.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final List<CaseStudyModelItem> caseStudyItems = CaseStudyRepository.data;
+  State<LandingPage> createState() => _LandingPageState();
+}
 
+class _LandingPageState extends State<LandingPage> {
+  final ScrollController _scrollController = ScrollController();
+  final List<CaseStudyModelItem> caseStudyItems = CaseStudyRepository.data;
+  List<NavigationBarButtonModel> sections = [];
+
+  @override
+  void initState() {
+    sections = [
+      NavigationBarButtonModel(
+          key: GlobalKey(),
+          title: "Home",
+          buttonType: NavButtonType.home,
+          section: Home(
+            startFunction: () => scrollToSection(sections[1].key),
+          )
+      ),
+      NavigationBarButtonModel(
+          key: GlobalKey(),
+          title: "Case studies",
+          buttonType: NavButtonType.caseStudies,
+          section: CaseStudies(caseStudyItems: caseStudyItems)
+      ),
+      NavigationBarButtonModel(
+          key: GlobalKey(),
+          title: "Skills",
+          buttonType: NavButtonType.skills,
+          section: const Skills()
+      ),
+      NavigationBarButtonModel(
+          key: GlobalKey(),
+          title: "Recent work",
+          buttonType: NavButtonType.recentWork,
+          section: const RecentWork()
+      ),
+      NavigationBarButtonModel(
+          key: GlobalKey(),
+          title: "Get in Touch",
+          buttonType: NavButtonType.getInTouch,
+          section: const GetInTouch()
+      ),
+    ];
+    super.initState();
+  }
+
+  void scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
@@ -26,13 +91,15 @@ class LandingPage extends StatelessWidget {
             width: ScreenUtil().screenWidth,
             height: ScreenUtil().screenHeight,
             child: SingleChildScrollView(
+              controller: _scrollController,
               child: Column(
                 children: [
-                  const Home(),
-                  CaseStudies(caseStudyItems: caseStudyItems),
-                  const Skills(),
-                  const RecentWork(),
-                  const GetInTouch(),
+                  for(final NavigationBarButtonModel section in sections) ...[
+                    Container(
+                      key: section.key,
+                      child: section.section,
+                    )
+                  ],
                   const Footer()
                 ],
               ),
@@ -40,7 +107,12 @@ class LandingPage extends StatelessWidget {
           ),
           Positioned(
             top: 0,
-            child: const TopNavigationBar(),
+            child: TopNavigationBar(
+              sections: sections,
+              callBack: (NavigationBarButtonModel section) {
+                scrollToSection(section.key);
+              },
+            ),
           )
         ],
       )

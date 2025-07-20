@@ -14,8 +14,8 @@ class Buttons {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(
-          horizontal: 12.w,
-          vertical: 6.h
+          horizontal: 18.w,
+          vertical: 24.h
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10)
@@ -39,6 +39,7 @@ class Buttons {
   }) {
     return IconButton(
       onPressed: onPressed,
+      padding: EdgeInsets.all(12.sp),
       icon: SvgPicture.asset(
         "assets/icons/$icon.svg",
         width: width ?? 18.sp,

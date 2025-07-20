@@ -10,20 +10,22 @@ class AppRouter {
       GoRoute(
         path: '/',
         builder: (context, state) => const LandingPage(),
-      ),
-      GoRoute(
-        path: '/recent-work/:id',
-        builder: (context, state) {
-          final id = state.pathParameters['id']!;
-          return RecentWorkPage(id: id);
-        },
-      ),
-      GoRoute(
-        path: '/case-study/:id',
-        builder: (context, state) {
-          final id = state.pathParameters['id']!;
-          return ViewCaseStudyPage(id: id);
-        }
+        routes: [
+          GoRoute(
+            path: '/recent-work/:id',
+            builder: (context, state) {
+              final id = state.pathParameters['id']!;
+              return RecentWorkPage(id: id);
+            },
+          ),
+          GoRoute(
+              path: '/case-study/:id',
+              builder: (context, state) {
+                final id = state.pathParameters['id']!;
+                return ViewCaseStudyPage(id: id);
+              }
+          ),
+        ]
       ),
     ],
   );

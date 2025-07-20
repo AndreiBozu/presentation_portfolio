@@ -98,6 +98,12 @@ class _GetInTouchState extends State<GetInTouch> {
                         emailError = response.isEmailError;
                         messageError = response.isMessageError;
                       });
+                    } else {
+                      GetInTouchUseCase().sendEmail(
+                        sender: email,
+                        phone: phone,
+                        message: message
+                      );
                     }
                     showDialog(
                       context: context,

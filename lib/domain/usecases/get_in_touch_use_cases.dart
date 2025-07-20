@@ -26,4 +26,12 @@ class GetInTouchUseCase {
   static bool _isValidEmail(String email) {
     return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
   }
+
+  void sendEmail({
+    required String sender,
+    required String message,
+    String? phone,
+  }) async {
+
+  }
 }

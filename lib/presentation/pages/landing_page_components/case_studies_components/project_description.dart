@@ -46,11 +46,17 @@ class ProjectDescription extends ConsumerWidget {
           style: TextStyles.caseStudiesProjectTitleName,
         ),
         SizedBox(height: 20.h),
-        SizedBox(
-          width: 450.w,
-          child: Text(
-            caseStudyItem.description,
-            style: TextStyles.paragraphGrey,
+        GestureDetector(
+          onTap: () {
+            ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
+            context.go("/case-study/${caseStudyItem.id}");
+          },
+          child: SizedBox(
+            width: 450.w,
+            child: Text(
+              caseStudyItem.description,
+              style: TextStyles.paragraphGrey,
+            ),
           ),
         ),
         SizedBox(height: 35.h),

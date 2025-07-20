@@ -70,7 +70,7 @@ class TextStyles {
       color: AppColor.mediumGrey,
       fontSize: 18.sp,
       fontWeight: FontWeight.w600,
-      height: 1
+      height: 1.2
   );
   static final TextStyle getInTouchResponseTitle = TextStyle(
       color: AppColor.black,

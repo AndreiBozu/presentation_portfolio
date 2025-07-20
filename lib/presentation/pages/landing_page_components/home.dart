@@ -7,7 +7,11 @@ import 'package:presentation_portfolio/core/theme/text_style.dart';
 import '../../widgets/buttons.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+    required this.startFunction
+  });
+  final Function startFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +58,7 @@ class Home extends StatelessWidget {
                         size: 16.sp,
                       ),
                       enableShadow: true,
-                      onPressed: () {
-
-                      }
+                      onPressed: () => startFunction()
                     )
                   ],
                 ),

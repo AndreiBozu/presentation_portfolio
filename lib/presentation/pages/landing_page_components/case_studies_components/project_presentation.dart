@@ -50,6 +50,7 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
             colorDarkTheme: Color(darkColor),
             imageName: caseStudyItem.imagePath,
             isHovered: _isHovered,
+            caseStudyItem: caseStudyItem,
           ),
           ProjectDescription(
             caseStudyItem: caseStudyItem,
@@ -71,6 +72,7 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
             colorDarkTheme: Color(darkColor),
             imageName: caseStudyItem.imagePath,
             isHovered: _isHovered,
+            caseStudyItem: caseStudyItem,
           )
         ],
       ),
