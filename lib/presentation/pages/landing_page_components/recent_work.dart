@@ -33,7 +33,7 @@ class _RecentWorkState extends State<RecentWork> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Text(
             "Recent work",
             style: TextStyles.sectionTitleNameBlack,

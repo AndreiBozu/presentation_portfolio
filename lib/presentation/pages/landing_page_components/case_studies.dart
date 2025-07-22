@@ -24,7 +24,7 @@ class CaseStudies extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 100.h),
+          SizedBox(height: 80.h),
           Text(
             "Case studies",
             style: TextStyles.sectionTitleNameBlack,

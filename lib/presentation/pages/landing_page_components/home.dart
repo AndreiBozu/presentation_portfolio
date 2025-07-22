@@ -63,12 +63,15 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 350.w,
                 height: 350.w,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(175.w),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(350.sp),
+                  child: Image.asset(
+                    Constant.avatar,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               )
             ],

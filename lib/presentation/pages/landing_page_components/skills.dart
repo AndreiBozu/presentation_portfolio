@@ -30,16 +30,16 @@ class _SkillsState extends State<Skills> {
       child: Center(
         child: Column(
           children: [
-            SizedBox(height: 100.h),
+            SizedBox(height: 80.h),
             Text(
               "Skills",
               style: TextStyles.sectionTitleNameWhite,
             ),
             SizedBox(height: 20.h),
             SizedBox(
-              width: ScreenUtil().screenWidth * 0.5,
+              width: ScreenUtil().screenWidth * 0.6,
               child: Text(
-                Constant.recentWorksDescription,
+                Constant.skillsDescription,
                 textAlign: TextAlign.center,
                 style: TextStyles.paragraphGrey,
               ),
