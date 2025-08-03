@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class ExtraInfo extends StatelessWidget {
@@ -46,7 +46,7 @@ class ExtraInfo extends StatelessWidget {
                     SizedBox(height: 20.h),
                     Text(
                       item.title,
-                      style: TextStyles.caseStudiesExtraItemTitle,
+                      style: TextStyles.recentWorkExtraItemTitle,
                     ),
                     SizedBox(height: 15.h),
                     Text(
@@ -83,7 +83,7 @@ class ExtraInfo extends StatelessWidget {
                   SizedBox(height: 20.h),
                   Text(
                     item.title,
-                    style: TextStyles.caseStudiesExtraItemTitle,
+                    style: TextStyles.recentWorkExtraItemTitle,
                   ),
                   SizedBox(height: 15.h),
                   Text(

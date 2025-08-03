@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
-import 'package:presentation_portfolio/presentation/providers/case_study_item.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
+import 'package:presentation_portfolio/presentation/providers/recent_work_item.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,11 +14,11 @@ class ProjectDescription extends ConsumerWidget {
     super.key,
     required this.colorLightTheme,
     required this.colorDarkTheme,
-    required this.caseStudyItem
+    required this.recentWorkItem
   });
   final Color colorLightTheme;
   final Color colorDarkTheme;
-  final CaseStudyModelItem caseStudyItem;
+  final RecentWorkModelItem recentWorkItem;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,25 +36,25 @@ class ProjectDescription extends ConsumerWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            caseStudyItem.companyName,
-            style: TextStyles.caseStudiesCompanyTitleStyle(textColor: colorDarkTheme),
+            recentWorkItem.companyName,
+            style: TextStyles.recentWorkCompanyTitleStyle(textColor: colorDarkTheme),
           )
         ),
         SizedBox(height: 25.h),
         Text(
-          caseStudyItem.title,
-          style: TextStyles.caseStudiesProjectTitleName,
+          recentWorkItem.title,
+          style: TextStyles.recentWorkProjectTitleName,
         ),
         SizedBox(height: 20.h),
         GestureDetector(
           onTap: () {
-            ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
-            context.go("/case-study/${caseStudyItem.id}");
+            ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
+            context.go("/recent-work/${recentWorkItem.id}");
           },
           child: SizedBox(
             width: 450.w,
             child: Text(
-              caseStudyItem.description,
+              recentWorkItem.shortDescription,
               style: TextStyles.paragraphGrey,
             ),
           ),
@@ -62,12 +62,12 @@ class ProjectDescription extends ConsumerWidget {
         SizedBox(height: 35.h),
         Buttons.squareTextButton(
           onPressed: () {
-            ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
-            context.go("/case-study/${caseStudyItem.id}");
+            ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
+            context.go("/recent-work/${recentWorkItem.id}");
           },
           textColor: AppColor.white,
           backgroundColor: colorDarkTheme,
-          text: "View case study",
+          text: "View project",
           textSize: 14.sp,
           verticalPadding: 10.h,
           horizontalPadding: 24.w,

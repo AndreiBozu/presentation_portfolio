@@ -1,17 +1,20 @@
-import '../models/case_study_item_model.dart';
+import '../models/recent_work_item_model.dart';
 
 
-class CaseStudyRepository {
-  static List<CaseStudyModelItem> data = [
-    CaseStudyModelItem(
+class RecentWorksRepository {
+  static List<RecentWorkModelItem> data = [
+    RecentWorkModelItem(
       id: "ratify_id",
       title: "RatifyID",
       imagePath: "content/ratifyid_bg.jpeg",
-      shortDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros.",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Duis sit amet justo sit amet purus porta tempus vitae sed sem. Fusce ornare iaculis viverra. Quisque at nisi eget mauris eleifend posuere. Praesent cursus mi hendrerit ornare ultrices. Praesent ut est sit amet dui feugiat fermentum finibus non dui. Sed eros velit, suscipit vel posuere at, lacinia vitae velit. Morbi vulputate accumsan consectetur.",
+      shortDescription: "RatifyId – Lead Mobile Developer"
+          "\nAn identity verification app accredited by Australian government authorities. As the lead mobile developer, I worked on this project for over two years, contributing to both the mobile front end and its integration into a broader multi-platform infrastructure. Key features include NFC-based passport chip reading, encrypted document storage, OCR, advanced image processing, and liveness detection.",
+      description: "RatifyId is a mobile application officially accredited by Australian government authorities for the verification and secure storage of user identities. I served as the lead developer for the mobile platform, which has been my primary focus over the past two years."
+          "\n\nThis project extends beyond a standalone application; it is part of a broader infrastructure comprising multiple integrated platforms. However, the mobile application serves as the system’s front end, representing the primary point of interaction for end users."
+          "\n\nThroughout the development process, we implemented a wide range of advanced technologies essential for identity verification. These include data extraction from passport chips via NFC, the creation of encrypted databases for secure document storage, optical character recognition (OCR), complex image processing, and—perhaps most notably—liveness detection to ensure user authenticity.",
       companyName: "Makesure",
-      lightColorHex: "7bc9ed",
-      darkColorHex: "006795",
+      lightColorHex: "b7e2f5",
+      darkColorHex: "0097DB",
       googlePlayLink: "https://play.google.com/store/apps/details?id=com.makesure.ratifyid",
       appStoreLink: "https://apps.apple.com/au/app/trusted-digital-id-ratifyid/id1666944696",
       webLink: "https://www.ratifyid.com/",
@@ -33,7 +36,7 @@ class CaseStudyRepository {
         )
       ],
     ),
-    CaseStudyModelItem(
+    RecentWorkModelItem(
       id: "ratify_me",
       title: "RatifyMe",
       imagePath: "content/test-rme.png",
@@ -58,7 +61,7 @@ class CaseStudyRepository {
         ),
       ],
     ),
-    CaseStudyModelItem(
+    RecentWorkModelItem(
       id: "idc",
       title: "Interracial Dating Central",
       imagePath: "content/test-idc.png",

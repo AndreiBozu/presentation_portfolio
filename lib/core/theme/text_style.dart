@@ -40,7 +40,7 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       height: 1.6
   );
-  static TextStyle caseStudiesCompanyTitleStyle({Color textColor = AppColor.white}) {
+  static TextStyle recentWorkCompanyTitleStyle({Color textColor = AppColor.white}) {
     return TextStyle(
       color: textColor,
       fontSize: 12.sp,
@@ -48,19 +48,19 @@ class TextStyles {
       fontWeight: FontWeight.w500
     );
   }
-  static final TextStyle caseStudiesProjectTitleName = TextStyle(
+  static final TextStyle recentWorkProjectTitleName = TextStyle(
       color: AppColor.black,
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,
       height: 1
   );
-  static final TextStyle caseStudiesExtraItemTitle = TextStyle(
+  static final TextStyle recentWorkExtraItemTitle = TextStyle(
       color: AppColor.black,
       fontSize: 21.sp,
       fontWeight: FontWeight.w700,
       height: 1
   );
-  static final TextStyle recentWorkProjectTitleName = TextStyle(
+  static final TextStyle caseStudyProjectTitleName = TextStyle(
       color: AppColor.white,
       fontSize: 24.sp,
       fontWeight: FontWeight.w700,

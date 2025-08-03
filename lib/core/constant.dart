@@ -2,9 +2,9 @@
 class Constant {
   static const String myName = "Andrei Bozu";
   static const String introText = "Without a clear goal, your effort has no direction define the destination, and every step gains power.";
-  static const String caseStudiesDescription = "The following projects have been instrumental in shaping my professional development. Through them, I have honed my skills in the field and gained a clearer vision of my future career direction.";
+  static const String recentWorksDescription = "The following projects have been instrumental in shaping my professional development. Through them, I have honed my skills in the field and gained a clearer vision of my future career direction.";
   static const String skillsDescription = "Abilities are not merely instruments of success, but reflections of patience shaped by perseverance through failure and the courage to begin again. They are not the product of luck, but of quiet dedication on days without recognition, driven by the belief that, in time, one's work will speak for itself.";
-  static const String recentWorksDescription = "Presented here are several recent works some integral to larger projects, others developed independently to apply and reinforce specific knowledge.";
+  static const String caseStudiesDescription = "Presented here are several recent works some integral to larger projects, others developed independently to apply and reinforce specific knowledge.";
   static const String getInTouchDescription = "For further information, please feel free to reach out by completing the form below or by connecting with me on LinkedIn.";
 
   /// Project text short descriptions

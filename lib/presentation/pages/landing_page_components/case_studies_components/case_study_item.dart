@@ -4,17 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
-import 'package:presentation_portfolio/presentation/providers/recent_work_item.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/presentation/providers/case_study_item.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
 
-class RecentWorkItem extends ConsumerWidget {
-  const RecentWorkItem({
+class CaseStudyItem extends ConsumerWidget {
+  const CaseStudyItem({
     super.key,
-    required this.recentWorkItem,
+    required this.caseStudyItem,
   });
-  final RecentWorkItemModel recentWorkItem;
+  final CaseStudyItemModel caseStudyItem;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +25,7 @@ class RecentWorkItem extends ConsumerWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.sp),
             child: Image.asset(
-              "assets/images/${recentWorkItem.imageName}",
+              "assets/images/${caseStudyItem.imageName}",
               fit: BoxFit.fill,
             ),
           ),
@@ -34,16 +34,16 @@ class RecentWorkItem extends ConsumerWidget {
         SizedBox(
           width: 530.w,
           child: Text(
-            recentWorkItem.title,
+            caseStudyItem.title,
             textAlign: TextAlign.start,
-            style: TextStyles.recentWorkProjectTitleName,
+            style: TextStyles.caseStudyProjectTitleName,
           ),
         ),
         SizedBox(height: 15.h),
         SizedBox(
           width: 530.w,
           child: Text(
-            recentWorkItem.description,
+            caseStudyItem.description,
             textAlign: TextAlign.start,
             style: TextStyles.paragraphGrey,
           ),
@@ -55,8 +55,8 @@ class RecentWorkItem extends ConsumerWidget {
             children: [
               Buttons.squareTextButton(
                   onPressed: () {
-                    context.go("/recent-work/${recentWorkItem.key}");
-                    ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
+                    context.go("/case-study/${caseStudyItem.key}");
+                    ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
                   },
                   enableShadow: false,
                   textColor: AppColor.white,

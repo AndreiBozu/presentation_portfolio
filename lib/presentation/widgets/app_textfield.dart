@@ -38,7 +38,7 @@ class AppTextField extends StatelessWidget {
           if(label != null) ...[
             Text(
               label ?? "",
-              style: TextStyles.caseStudiesCompanyTitleStyle(),
+              style: TextStyles.recentWorkCompanyTitleStyle(),
             ),
             SizedBox(height: 3.h),
           ],

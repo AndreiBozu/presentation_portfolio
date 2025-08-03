@@ -1,24 +1,34 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/core/constant.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/repositories/case_study_items_repository.dart';
+import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 
-import 'case_studies_components/project_presentation.dart';
+import 'case_studies_components/case_study_item.dart';
 
-class CaseStudies extends StatelessWidget {
-  const CaseStudies({
-    super.key,
-    required this.caseStudyItems
-  });
-  final List<CaseStudyModelItem> caseStudyItems;
+
+class CaseStudies extends StatefulWidget {
+  const CaseStudies({super.key});
+
+  @override
+  State<CaseStudies> createState() => _CaseStudiesState();
+}
+
+class _CaseStudiesState extends State<CaseStudies> {
+  final List<CaseStudyItemModel> works = RecentWorkItemsRepository.data;
+  final CarouselSliderController buttonCarouselController = CarouselSliderController();
+
 
   @override
   Widget build(BuildContext context) {
 
     return Container(
       width: ScreenUtil().screenWidth,
+      constraints: BoxConstraints(minHeight: ScreenUtil().screenHeight),
       color: AppColor.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +39,7 @@ class CaseStudies extends StatelessWidget {
             "Case studies",
             style: TextStyles.sectionTitleNameBlack,
           ),
-          SizedBox(height: 25.h),
+          SizedBox(height: 20.h),
           SizedBox(
             width: ScreenUtil().screenWidth * 0.5,
             child: Text(
@@ -38,21 +48,66 @@ class CaseStudies extends StatelessWidget {
               style: TextStyles.paragraphGrey,
             ),
           ),
-          SizedBox(height: 40.h),
-          SizedBox(
-            width: 950.w,
-            child: Column(
-              children: [
-                for(int index = 0; index < caseStudyItems.length; index++) ...[
-                  ProjectPresentation(
-                    caseStudyItem: caseStudyItems[index],
-                    reverse: index.isOdd,
-                  ),
-                  SizedBox(height: 70.h),
-                ]
-              ],
-            )
-          )
+          SizedBox(height: 30.h),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                width: 900.w,
+                child: CarouselSlider(
+                  carouselController: buttonCarouselController,
+                  items: works.map((final CaseStudyItemModel workItem) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return CaseStudyItem(
+                          caseStudyItem: workItem,
+                        );
+                      }
+                    );
+                  }).toList(),
+                  options: CarouselOptions(
+                    height: 470.h,
+                    aspectRatio: 1,
+                    viewportFraction: 1,
+                    initialPage: 0,
+                    enableInfiniteScroll: true,
+                    autoPlay: true,
+                    autoPlayInterval: const Duration(seconds: 7),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 700),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enlargeCenterPage: false,
+                    enlargeFactor: 0,
+                    scrollDirection: Axis.horizontal,
+                  )
+                ),
+              ),
+              Positioned(
+                left: 0,
+                child: Buttons.iconButton(
+                  width: 28.sp,
+                  icon: "back_icon",
+                  onPressed: () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      buttonCarouselController.previousPage();
+                    });
+                  }
+                ),
+              ),
+              Positioned(
+                right: 0,
+                child: Buttons.iconButton(
+                  width: 28.sp,
+                  icon: "forward_icon",
+                  onPressed: () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      buttonCarouselController.nextPage();
+                    });
+                  }
+                ),
+              )
+            ],
+          ),
+          SizedBox(height: 30.h),
         ],
       )
     );

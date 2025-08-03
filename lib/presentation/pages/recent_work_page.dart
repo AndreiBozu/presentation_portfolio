@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
+import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 
-import '../providers/recent_work_item.dart';
+import '../providers/case_study_item.dart';
 
 
 class RecentWorkPage extends ConsumerWidget {
@@ -20,7 +20,7 @@ class RecentWorkPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final RecentWorkItemModel? recentWorkItem = ref.watch(recentWorkItemProvider)[id];
+    final CaseStudyItemModel? recentWorkItem = ref.watch(caseStudyItemProvider)[id];
 
     if (recentWorkItem == null) {
       return const Scaffold(

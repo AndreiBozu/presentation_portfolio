@@ -77,7 +77,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           if(widget.label != null) ...[
             Text(
               widget.label ?? "",
-              style: TextStyles.caseStudiesCompanyTitleStyle(),
+              style: TextStyles.recentWorkCompanyTitleStyle(),
             ),
             SizedBox(height: 3.h),
           ],

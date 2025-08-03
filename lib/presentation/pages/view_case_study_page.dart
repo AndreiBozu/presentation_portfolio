@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/presentation/pages/view_case_study_components/case_study_presentation.dart';
 import 'package:presentation_portfolio/presentation/pages/view_case_study_components/extra_info.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 
 import '../../core/theme/app_color.dart';
-import '../providers/case_study_item.dart';
+import '../providers/recent_work_item.dart';
 import '../widgets/buttons.dart';
 
 
@@ -21,7 +21,7 @@ class ViewCaseStudyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final CaseStudyModelItem? caseStudyItem = ref.watch(caseStudyItemProvider)[id];
+    final RecentWorkModelItem? caseStudyItem = ref.watch(recentWorkItemProvider)[id];
 
     if (caseStudyItem == null) {
       return const Scaffold(

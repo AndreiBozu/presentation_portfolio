@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 
 import 'project_description.dart';
 import 'project_image.dart';
@@ -10,9 +10,9 @@ class ProjectPresentation extends StatefulWidget {
   const ProjectPresentation({
     super.key,
     this.reverse = false,
-    required this.caseStudyItem
+    required this.recentWorkItem
   });
-  final CaseStudyModelItem caseStudyItem;
+  final RecentWorkModelItem recentWorkItem;
   final bool reverse;
 
   @override
@@ -21,11 +21,11 @@ class ProjectPresentation extends StatefulWidget {
 
 class _ProjectPresentationState extends State<ProjectPresentation> {
   bool _isHovered = false;
-  late final CaseStudyModelItem caseStudyItem;
+  late final RecentWorkModelItem recentWorkItem;
   
   @override
   void initState() {
-    caseStudyItem = widget.caseStudyItem;
+    recentWorkItem = widget.recentWorkItem;
     super.initState();
   }
 
@@ -35,8 +35,8 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
 
   @override
   Widget build(BuildContext context) {
-    final lightColor = int.parse("0xFF${caseStudyItem.lightColorHex}");
-    final darkColor = int.parse("0xFF${caseStudyItem.darkColorHex}");
+    final lightColor = int.parse("0xFF${recentWorkItem.lightColorHex}");
+    final darkColor = int.parse("0xFF${recentWorkItem.darkColorHex}");
 
     return MouseRegion(
       onEnter: (PointerEnterEvent event) => _onHoverChanged(enabled: true),
@@ -48,12 +48,12 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
           ProjectImage(
             colorLightTheme: Color(lightColor),
             colorDarkTheme: Color(darkColor),
-            imageName: caseStudyItem.imagePath,
+            imageName: recentWorkItem.imagePath,
             isHovered: _isHovered,
-            caseStudyItem: caseStudyItem,
+            recentWorkItem: recentWorkItem,
           ),
           ProjectDescription(
-            caseStudyItem: caseStudyItem,
+            recentWorkItem: recentWorkItem,
             colorLightTheme: Color(lightColor),
             colorDarkTheme: Color(darkColor)
           ),
@@ -63,16 +63,16 @@ class _ProjectPresentationState extends State<ProjectPresentation> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ProjectDescription(
-            caseStudyItem: caseStudyItem,
+            recentWorkItem: recentWorkItem,
             colorLightTheme: Color(lightColor),
             colorDarkTheme: Color(darkColor)
           ),
           ProjectImage(
             colorLightTheme:  Color(lightColor),
             colorDarkTheme: Color(darkColor),
-            imageName: caseStudyItem.imagePath,
+            imageName: recentWorkItem.imagePath,
             isHovered: _isHovered,
-            caseStudyItem: caseStudyItem,
+            recentWorkItem: recentWorkItem,
           )
         ],
       ),

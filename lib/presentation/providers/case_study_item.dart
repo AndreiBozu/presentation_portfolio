@@ -2,16 +2,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 
 
-class CaseStudyItem extends StateNotifier<Map<String, CaseStudyModelItem>> {
+class CaseStudyItem extends StateNotifier<Map<String, CaseStudyItemModel>> {
   CaseStudyItem() : super({});
 
-  void save(CaseStudyModelItem item) {
-    state = {...state, item.id: item};
+  void save(CaseStudyItemModel item) {
+    state = {...state, item.key: item};
   }
 
-  CaseStudyModelItem? getById(String id) => state[id];
+  CaseStudyItemModel? getById(String id) => state[id];
 }
 
-final caseStudyItemProvider = StateNotifierProvider<CaseStudyItem, Map<String, CaseStudyModelItem>>(
-    (ref) => CaseStudyItem(),
+final caseStudyItemProvider = StateNotifierProvider<CaseStudyItem, Map<String, CaseStudyItemModel>>(
+      (ref) => CaseStudyItem(),
 );

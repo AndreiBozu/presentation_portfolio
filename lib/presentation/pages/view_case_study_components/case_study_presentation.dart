@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +12,7 @@ class CaseStudyPresentation extends StatelessWidget {
     super.key,
     required this.caseStudyItem
   });
-  final CaseStudyModelItem caseStudyItem;
+  final RecentWorkModelItem caseStudyItem;
 
   @override
   Widget build(BuildContext context) {

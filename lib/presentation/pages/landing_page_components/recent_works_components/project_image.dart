@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
-import 'package:presentation_portfolio/presentation/providers/case_study_item.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
+import 'package:presentation_portfolio/presentation/providers/recent_work_item.dart';
 
 class ProjectImage extends ConsumerWidget {
   const ProjectImage({
@@ -12,13 +12,13 @@ class ProjectImage extends ConsumerWidget {
     required this.colorDarkTheme,
     required this.imageName,
     required this.isHovered,
-    required this.caseStudyItem
+    required this.recentWorkItem
   });
   final Color colorLightTheme;
   final Color colorDarkTheme;
   final String imageName;
   final bool isHovered;
-  final CaseStudyModelItem caseStudyItem;
+  final RecentWorkModelItem recentWorkItem;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,8 +27,8 @@ class ProjectImage extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
-        context.go("/case-study/${caseStudyItem.id}");
+        ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
+        context.go("/recent-work/${recentWorkItem.id}");
       },
       child: SizedBox(
         width: width,

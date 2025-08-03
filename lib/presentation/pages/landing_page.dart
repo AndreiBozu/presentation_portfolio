@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/data/models/navigation_bar_button_model.dart';
-import 'package:presentation_portfolio/data/repositories/case_study_repository.dart';
+import 'package:presentation_portfolio/data/repositories/recent_works_repository.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
 
-import 'landing_page_components/case_studies.dart';
+import 'landing_page_components/recent_works.dart';
 import 'landing_page_components/get_in_touch.dart';
 import 'landing_page_components/home.dart';
-import 'landing_page_components/recent_work.dart';
+import 'landing_page_components/case_studies.dart';
 import 'landing_page_components/skills.dart';
 
 class LandingPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final ScrollController _scrollController = ScrollController();
-  final List<CaseStudyModelItem> caseStudyItems = CaseStudyRepository.data;
+  final List<RecentWorkModelItem> recentWorksItems = RecentWorksRepository.data;
   List<NavigationBarButtonModel> sections = [];
 
   @override
@@ -37,9 +37,9 @@ class _LandingPageState extends State<LandingPage> {
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
-          title: "Case studies",
+          title: "Recent Works",
           buttonType: NavButtonType.caseStudies,
-          section: CaseStudies(caseStudyItems: caseStudyItems)
+          section: RecentWorks(recentWorksItems: recentWorksItems)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
@@ -49,9 +49,9 @@ class _LandingPageState extends State<LandingPage> {
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
-          title: "Recent work",
+          title: "Case studies",
           buttonType: NavButtonType.recentWork,
-          section: const RecentWork()
+          section: const CaseStudies()
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
