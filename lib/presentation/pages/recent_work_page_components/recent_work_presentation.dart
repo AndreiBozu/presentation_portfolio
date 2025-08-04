@@ -7,12 +7,12 @@ import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class CaseStudyPresentation extends StatelessWidget {
-  const CaseStudyPresentation({
+class RecentWorkPresentation extends StatelessWidget {
+  const RecentWorkPresentation({
     super.key,
-    required this.caseStudyItem
+    required this.recentWorkItem
   });
-  final RecentWorkModelItem caseStudyItem;
+  final RecentWorkModelItem recentWorkItem;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CaseStudyPresentation extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6.sp),
                 child: Image.asset(
-                  "assets/${caseStudyItem.imagePath}",
+                  "assets/${recentWorkItem.imagePath}",
                   fit: BoxFit.fill,
                 ),
               ),
@@ -42,12 +42,12 @@ class CaseStudyPresentation extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      caseStudyItem.title,
+                      recentWorkItem.title,
                       style: TextStyles.sectionTitleNameBlack,
                     ),
                     SizedBox(height: 10.h),
                     Text(
-                      caseStudyItem.description,
+                      recentWorkItem.description,
                       style: TextStyles.paragraphGrey,
                     ),
                   ],
@@ -60,10 +60,10 @@ class CaseStudyPresentation extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            if(caseStudyItem.appStoreLink != null)
+            if(recentWorkItem.appStoreLink != null)
               Buttons.squareTextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(caseStudyItem.appStoreLink!));
+                  launchUrl(Uri.parse(recentWorkItem.appStoreLink!));
                 },
                 backgroundColor: Colors.blue,
                 textColor: Colors.white,
@@ -76,10 +76,10 @@ class CaseStudyPresentation extends StatelessWidget {
                   width: 21.sp,
                 )
               ),
-            if(caseStudyItem.googlePlayLink != null)
+            if(recentWorkItem.googlePlayLink != null)
               Buttons.squareTextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(caseStudyItem.googlePlayLink!));
+                  launchUrl(Uri.parse(recentWorkItem.googlePlayLink!));
                 },
                 backgroundColor: Colors.green,
                 textColor: Colors.white,
@@ -92,10 +92,10 @@ class CaseStudyPresentation extends StatelessWidget {
                     width: 21.sp,
                   )
               ),
-            if(caseStudyItem.webLink != null)
+            if(recentWorkItem.webLink != null)
               Buttons.squareTextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(caseStudyItem.webLink!));
+                  launchUrl(Uri.parse(recentWorkItem.webLink!));
                 },
                 backgroundColor: Colors.blue,
                 textColor: Colors.white,
@@ -108,10 +108,10 @@ class CaseStudyPresentation extends StatelessWidget {
                   width: 21.sp,
                 )
               ),
-            if(caseStudyItem.gitHubLink != null)
+            if(recentWorkItem.gitHubLink != null)
               Buttons.squareTextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(caseStudyItem.gitHubLink!));
+                  launchUrl(Uri.parse(recentWorkItem.gitHubLink!));
                 },
                 backgroundColor: Colors.green,
                 textColor: Colors.white,

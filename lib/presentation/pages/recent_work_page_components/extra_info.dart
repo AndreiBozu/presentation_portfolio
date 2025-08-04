@@ -51,14 +51,14 @@ class ExtraInfo extends StatelessWidget {
                     SizedBox(height: 15.h),
                     Text(
                       item.description,
-                      style: TextStyles.paragraphGrey,
+                      style: TextStyles.recentWorkParagraphGrey,
                     ),
                     SizedBox(height: 20.h),
                   ],
                 ),
               )
             ),
-            SizedBox(width: 20.w),
+            SizedBox(width: 40.w),
           ],
           SizedBox(
             width: 300.w,
@@ -75,7 +75,7 @@ class ExtraInfo extends StatelessWidget {
             )
           ),
           if(!reverse) ...[
-            SizedBox(width: 20.w),
+            SizedBox(width: 40.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +88,7 @@ class ExtraInfo extends StatelessWidget {
                   SizedBox(height: 15.h),
                   Text(
                     item.description,
-                    style: TextStyles.paragraphGrey,
+                    style: TextStyles.recentWorkParagraphGrey,
                   ),
                   SizedBox(height: 20.h),
                 ],

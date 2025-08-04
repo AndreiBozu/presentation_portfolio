@@ -11,7 +11,10 @@ class RecentWorksRepository {
           "\nPlatform: iOS & Android"
           "\nFocus: Develop an app in full compliance with all governmental regulations and requirements."
           "\n\nAn identity verification app accredited by Australian government authorities. As the lead mobile developer, I worked on this project for over two years, contributing to both the mobile front end and its integration into a broader multi-platform infrastructure. Key features include NFC-based passport chip reading, encrypted document storage, OCR, advanced image processing, and liveness detection.",
-      description: "RatifyId is a mobile application officially accredited by Australian government authorities for the verification and secure storage of user identities. I served as the lead developer for the mobile platform, which has been my primary focus over the past two years."
+      description: "Role: Lead Mobile App Developer"
+          "\nPlatform: iOS & Android"
+          "\nFocus: Develop an app in full compliance with all governmental regulations and requirements."
+          "\n\nRatifyId is a mobile application officially accredited by Australian government authorities for the verification and secure storage of user identities. I served as the lead developer for the mobile platform, which has been my primary focus over the past two years."
           "\n\nThis project extends beyond a standalone application; it is part of a broader infrastructure comprising multiple integrated platforms. However, the mobile application serves as the system’s front end, representing the primary point of interaction for end users."
           "\n\nThroughout the development process, we implemented a wide range of advanced technologies essential for identity verification. These include data extraction from passport chips via NFC, the creation of encrypted databases for secure document storage, optical character recognition (OCR), complex image processing, and—perhaps most notably—liveness detection to ensure user authenticity.",
       companyName: "Makesure",

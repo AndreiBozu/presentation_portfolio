@@ -34,6 +34,12 @@ class TextStyles {
       fontWeight: FontWeight.w400,
       height: 1.6
   );
+  static final TextStyle recentWorkParagraphGrey = TextStyle(
+      color: AppColor.grey,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.6
+  );
   static final TextStyle paragraphMediumGrey = TextStyle(
       color: AppColor.mediumGrey,
       fontSize: 14.sp,

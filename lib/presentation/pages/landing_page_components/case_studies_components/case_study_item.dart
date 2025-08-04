@@ -36,7 +36,7 @@ class CaseStudyItem extends ConsumerWidget {
           child: Text(
             caseStudyItem.title,
             textAlign: TextAlign.start,
-            style: TextStyles.caseStudyProjectTitleName,
+            style: TextStyles.recentWorkProjectTitleName,
           ),
         ),
         SizedBox(height: 15.h),
