@@ -25,20 +25,32 @@ class RecentWorksRepository {
       webLink: "https://www.ratifyid.com/",
       extraItemsList: [
         ExtraItem(
-          title: "Liveness check",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Etiam ultrices urna nisi, et semper lacus tincidunt nec.",
-          videoId: "H1tmzvmxJnw",
+          title: "NFC Passport reader",
+          description: "This feature allows users to scan their biometric passport using their smartphone’s NFC capability. By simply holding the passport near the phone, the app securely reads key identity information such as full name, date of birth, passport number, and the photo directly from the chip embedded in the document."
+              "\nThe process is fast, secure, and eliminates the need for manual data entry or photo uploads. It enhances the user experience during identity verification by ensuring accuracy, reducing errors, and providing a trusted way to confirm a person's identity using official government-issued documents.",
+          videoId: "qzBLKJ7ve_o",
         ),
         ExtraItem(
-          title: "NFC reader",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Etiam ultrices urna nisi, et semper lacus tincidunt nec.",
-          imagePath: "content/test_img.png",
+          title: "Liveness Detection",
+          description: "Another key requirement for the application was full compliance with accessibility standards. This meant that every screen or interface state had to clearly communicate its context and purpose, enabling users with visual impairments to navigate the app effectively primarily through audio feedback."
+              "Additionally, all text elements, buttons, and UI components had to be highly adaptable. For example, if a user increased the text size to 200% in their device’s accessibility settings, the layout had to adjust accordingly to maintain readability and usability across the entire app.",
+          videoId: "n0-8tK6mHAw",
         ),
         ExtraItem(
-          title: "NFC reader",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Etiam ultrices urna nisi, et semper lacus tincidunt nec.",
-          imagePath: "content/test_img.png",
-        )
+          title: "Accessibility",
+          description: "Within the app, users can receive and respond to requests from various businesses, enabling secure and seamless connections. Business representatives typically employees can customize their requests, which may include identity verification through a liveness check or the submission of specific documents, either selected at their discretion or predefined by the business. Once a user accepts a request via RatifyID, a secure connection is established between the user and the requesting business.",
+          imagePath: "content/ratifyid_accessibility.png"
+        ),
+        ExtraItem(
+          title: "Requests",
+          description: "Within the app, users can receive and respond to requests from various businesses, enabling secure and seamless connections. Business representatives typically employees can customize their requests, which may include identity verification through a liveness check or the submission of specific documents, either selected at their discretion or predefined by the business. Once a user accepts a request via RatifyID, a secure connection is established between the user and the requesting business.",
+          videoId: "wA525M3pcv4"
+        ),
+        ExtraItem(
+          title: "Identity Proofing Level (IP Level)",
+          description: "Identity Proofing Level indicates the strength and reliability of a digital identity used to access online services. RatifyID supports three primary levels: IP1, IP2, and IP3. To advance to a higher IP level, users are required to either upload specific types of documents or successfully complete a liveness check.",
+          videoId: "5iBdt5hzNPY",
+        ),
       ],
     ),
     RecentWorkModelItem(
@@ -63,14 +75,24 @@ class RecentWorksRepository {
       webLink: "https://www.ratifyme.com/",
       extraItemsList: [
         ExtraItem(
-          title: "Transferring from React native to flutter",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Etiam ultrices urna nisi, et semper lacus tincidunt nec.",
-          imagePath: "content/test_img.png",
+          title: "Profile",
+          description: "Developed a robust user profile management system featuring advanced editing capabilities, custom privacy settings, and avatar customization. Additionally, implemented a secure electronic signature solution supporting multiple signing methods (hand-drawn, typed, uploaded) with encrypted storage and audit trails for compliance.",
+          imagePath: "content/ratifyme_profile.jpg",
         ),
         ExtraItem(
-          title: "Deep linking",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices urna nisi, et semper lacus tincidunt nec. Nunc et ornare magna. Proin at mauris nec magna feugiat pharetra at ac eros. Etiam ultrices urna nisi, et semper lacus tincidunt nec.",
-          videoId: "PrqYohBV58o"
+          title: "Documents",
+          description: "Developed an in-app digital wallet capable of securely storing and managing user identity documents, including government IDs, licenses, and certificates. Implemented encryption, biometric authentication, and role-based sharing controls to ensure privacy and compliance with industry security standards.",
+          imagePath: "content/ratifyme_documents.jpg",
+        ),
+        ExtraItem(
+          title: "Document preview",
+          description: "Designed an intuitive document interface allowing users to open, edit, and preview content without leaving the app. Integrated real-time preview, quick navigation, and inline editing for a smooth, user-friendly experience.",
+          imagePath: "content/ratifyme_preview_documents.jpg",
+        ),
+        ExtraItem(
+          title: "Components",
+          description: "The system includes distinct modules tailored to different types of client requests. Each module is designed to address specific requirements: some requests may involve uploading supporting documents, others require completing an interactive quiz, while certain processes demand an electronic signature. This modular approach ensures flexibility, scalability, and a streamlined user experience, allowing each request type to follow its own optimized workflow.",
+          imagePath: "content/ratifyme_components.jpg",
         ),
       ],
     ),
