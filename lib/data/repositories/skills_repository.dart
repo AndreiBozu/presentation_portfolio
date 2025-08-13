@@ -44,8 +44,18 @@ class SkillsRepository {
       skillLevel: SkillLevel.high
     ),
     SkillItemModel(
+      title: "Firebase",
+      icon: "firebase",
+      skillLevel: SkillLevel.high
+    ),
+    SkillItemModel(
       title: "Kotlin",
       icon: "kotlin",
+      skillLevel: SkillLevel.good
+    ),
+    SkillItemModel(
+      title: "GraphQL",
+      icon: "graphql",
       skillLevel: SkillLevel.good
     ),
     SkillItemModel(

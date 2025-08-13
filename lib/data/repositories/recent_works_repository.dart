@@ -32,13 +32,13 @@ class RecentWorksRepository {
         ),
         ExtraItem(
           title: "Liveness Detection",
-          description: "Another key requirement for the application was full compliance with accessibility standards. This meant that every screen or interface state had to clearly communicate its context and purpose, enabling users with visual impairments to navigate the app effectively primarily through audio feedback."
-              "Additionally, all text elements, buttons, and UI components had to be highly adaptable. For example, if a user increased the text size to 200% in their device’s accessibility settings, the layout had to adjust accordingly to maintain readability and usability across the entire app.",
-          videoId: "n0-8tK6mHAw",
+          description: "The liveness detection system is engineered to prevent identity spoofing attempts using static images, pre-recorded videos, deepfakes, or physical masks. The implementation combines multiple techniques: convolutional neural networks (CNNs) for facial and object detection, classical image processing algorithms (e.g., edge detection, histogram analysis) to assess depth and contours, and color reflection analysis to identify unnatural surface textures indicative of non-human materials. Temporal patterns and micro-expressions are also evaluated to distinguish live subjects from forgeries. All captured biometric data is encrypted both in transit and at rest, ensuring compliance with security and privacy standards. This component involved complex algorithm design and tuning, making it one of the most technically demanding yet rewarding parts of the project.",
+          videoId: "4HXgJsRpvWY",
         ),
         ExtraItem(
           title: "Accessibility",
-          description: "Within the app, users can receive and respond to requests from various businesses, enabling secure and seamless connections. Business representatives typically employees can customize their requests, which may include identity verification through a liveness check or the submission of specific documents, either selected at their discretion or predefined by the business. Once a user accepts a request via RatifyID, a secure connection is established between the user and the requesting business.",
+          description: "Another key requirement for the application was full compliance with accessibility standards. This meant that every screen or interface state had to clearly communicate its context and purpose, enabling users with visual impairments to navigate the app effectively primarily through audio feedback."
+              "Additionally, all text elements, buttons, and UI components had to be highly adaptable. For example, if a user increased the text size to 200% in their device’s accessibility settings, the layout had to adjust accordingly to maintain readability and usability across the entire app.",
           imagePath: "content/ratifyid_accessibility.png"
         ),
         ExtraItem(

@@ -30,7 +30,6 @@ class _ExtraInfoState extends State<ExtraInfo> {
     return VisibilityDetector(
       key: Key(mediaType == MediaType.video ? widget.item.videoId! : widget.item.imagePath!),
       onVisibilityChanged: (VisibilityInfo visibilityInfo) {
-        print("=====${widget.item.title}======++${visibilityInfo.visibleFraction}");
         if (visibilityInfo.visibleFraction > 0.8) {
           Future.delayed(const Duration(milliseconds: 500), () {
             visible = true;
