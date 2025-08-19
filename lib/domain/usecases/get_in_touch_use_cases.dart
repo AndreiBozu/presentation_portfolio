@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:presentation_portfolio/core/constant.dart';
 import 'package:presentation_portfolio/data/models/get_in_touch_form_model.dart';
 import 'package:http/http.dart' as http;
@@ -31,7 +30,7 @@ class GetInTouchUseCase {
     return RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email);
   }
 
-  void sendEmail({
+  Future sendEmail({
     required String sender,
     required String message,
     String? phone,
@@ -52,14 +51,14 @@ class GetInTouchUseCase {
         'template_id': templateId,
         'user_id': publicKey,
         'template_params': {
-          'user_name': phone,
-          'user_email': sender,
-          'user_message': message,
+          'phone': phone,
+          'name': sender,
+          'message': message,
         }
       }),
     );
 
-    print("${response.statusCode}----------${response.body}");
+    // print("${response.statusCode}----------${response.body}");
     // if (response.statusCode == 200) {
     //   ScaffoldMessenger.of(context).showSnackBar(
     //     SnackBar(content: Text('✅ Email sent successfully!')),

@@ -18,6 +18,7 @@ class PhoneTextField extends StatefulWidget {
     this.placeholderTextColor = AppColor.grey,
     this.inputTextColor = AppColor.black,
     this.error = false,
+    this.clearTextField = false,
     required this.onChange
   });
   final String? label;
@@ -27,6 +28,7 @@ class PhoneTextField extends StatefulWidget {
   final Color inputTextColor;
   final bool error;
   final Function(String) onChange;
+  final bool clearTextField;
 
   @override
   State<PhoneTextField> createState() => _PhoneTextFieldState();
@@ -50,6 +52,9 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
 
   @override
   Widget build(BuildContext context) {
+    if(widget.clearTextField) {
+      controller.text = "";
+    }
 
     void showModal() {
       showDialog(

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 
-class AppTextField extends StatelessWidget {
+class AppTextField extends StatefulWidget {
   const AppTextField({
     super.key,
     this.label,
@@ -15,6 +15,7 @@ class AppTextField extends StatelessWidget {
     this.inputTextColor = AppColor.black,
     this.inputType = TextInputType.text,
     this.error = false,
+    this.clearTextField = false,
     required this.onChange
   });
   final String? label;
@@ -27,36 +28,49 @@ class AppTextField extends StatelessWidget {
   final TextInputType inputType;
   final bool error;
   final Function(String) onChange;
+  final bool clearTextField;
+
+  @override
+  State<AppTextField> createState() => _AppTextFieldState();
+}
+
+class _AppTextFieldState extends State<AppTextField> {
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    if(widget.clearTextField) {
+      controller.text = "";
+    }
+
     return SizedBox(
-      width: width ?? 350.w,
+      width: widget.width ?? 350.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if(label != null) ...[
+          if(widget.label != null) ...[
             Text(
-              label ?? "",
+              widget.label ?? "",
               style: TextStyles.recentWorkCompanyTitleStyle(),
             ),
             SizedBox(height: 3.h),
           ],
           Container(
-            width: width ?? 350.w,
+            width: widget.width ?? 350.w,
             decoration: BoxDecoration(
-              color: error ? AppColor.error100 : backgroundColor,
+              color: widget.error ? AppColor.error100 : widget.backgroundColor,
               borderRadius: BorderRadius.circular(4.sp),
-              border: Border.all(width: error ? 1 : 0, color: error ? AppColor.error700 : Colors.transparent)
+              border: Border.all(width: widget.error ? 1 : 0, color: widget.error ? AppColor.error700 : Colors.transparent)
             ),
             child: TextField(
+              controller: controller,
               onChanged: (String text) {
-                onChange(text);
+                widget.onChange(text);
               },
-              maxLines: maxLines,
-              keyboardType: inputType,
+              maxLines: widget.maxLines,
+              keyboardType: widget.inputType,
               style: TextStyle(
-                color: error ? AppColor.error700 : inputTextColor,
+                color: widget.error ? AppColor.error700 : widget.inputTextColor,
                 fontWeight: FontWeight.w500,
                 height: 1,
                 fontSize: 12.sp
@@ -67,11 +81,11 @@ class AppTextField extends StatelessWidget {
                   horizontal: 12.w,
                   vertical: 12.h
                 ),
-                hintText: placeHolder,
+                hintText: widget.placeHolder,
                 hintStyle: TextStyle(
                   height: 1,
                   fontSize: 12.sp,
-                  color: error ? AppColor.error300 : placeholderTextColor,
+                  color: widget.error ? AppColor.error300 : widget.placeholderTextColor,
                   fontWeight: FontWeight.w400
                 )
               ),

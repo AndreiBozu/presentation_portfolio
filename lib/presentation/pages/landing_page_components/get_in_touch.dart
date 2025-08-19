@@ -24,6 +24,8 @@ class _GetInTouchState extends State<GetInTouch> {
   bool emailError = false;
   bool messageError = false;
 
+  bool clearTextField = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,6 +52,7 @@ class _GetInTouchState extends State<GetInTouch> {
           AppTextField(
             label: "Email",
             error: emailError,
+            clearTextField: clearTextField,
             placeHolder: "Enter your email",
             inputType: TextInputType.emailAddress,
             onChange: (String text) {
@@ -62,6 +65,7 @@ class _GetInTouchState extends State<GetInTouch> {
           SizedBox(height: 20.h),
           PhoneTextField(
             label: "Mobile (optional)",
+            clearTextField: clearTextField,
             onChange: (String text) {
               setState(() => phone = text);
             },
@@ -71,6 +75,7 @@ class _GetInTouchState extends State<GetInTouch> {
             error: messageError,
             label: "Message",
             placeHolder: "Enter your message",
+            clearTextField: clearTextField,
             inputType: TextInputType.text,
             maxLines: 6,
             onChange: (String text) {
@@ -103,7 +108,17 @@ class _GetInTouchState extends State<GetInTouch> {
                         sender: email,
                         phone: phone,
                         message: message
-                      );
+                      ).whenComplete(() {
+                        setState(() {
+                          clearTextField = true;
+                          email = "";
+                          phone = "";
+                          message = "";
+                        });
+                        Future.delayed(const Duration(milliseconds: 500), () {
+                          setState(() => clearTextField = false);
+                        });
+                      });
                     }
                     showDialog(
                       context: context,
