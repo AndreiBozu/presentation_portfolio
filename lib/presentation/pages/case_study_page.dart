@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
+import 'package:presentation_portfolio/presentation/pages/landing_page_components/case_study_page_components/presentation_media.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 
@@ -49,16 +50,7 @@ class CaseStudyPage extends ConsumerWidget {
                           style: TextStyles.sectionTitleNameBlack,
                         ),
                         SizedBox(height: 15.h),
-                        SizedBox(
-                          height: 400.h, width: 708.w,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.sp),
-                            child: Image.asset(
-                              "assets/images/${caseStudyItem.imgDescriptionPath}",
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
+                        PresentationMedia(caseStudyItem: caseStudyItem),
                         SizedBox(height: 15.h),
                         Text(
                           caseStudyItem.longDescription,

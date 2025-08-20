@@ -7,6 +7,7 @@ class CaseStudyItemModel {
     required this.imgLabelPath,
     required this.imgDescriptionPath,
     required this.longDescription,
+    this.videoPath,
   });
   final String key;
   final String title;
@@ -14,4 +15,5 @@ class CaseStudyItemModel {
   final String imgLabelPath;
   final String imgDescriptionPath;
   final String longDescription;
+  final String? videoPath;
 }
