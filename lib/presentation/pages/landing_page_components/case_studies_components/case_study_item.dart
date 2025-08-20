@@ -25,7 +25,7 @@ class CaseStudyItem extends ConsumerWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.sp),
             child: Image.asset(
-              "assets/images/${caseStudyItem.imageName}",
+              "assets/images/${caseStudyItem.imgLabelPath}",
               fit: BoxFit.fill,
             ),
           ),
@@ -43,7 +43,9 @@ class CaseStudyItem extends ConsumerWidget {
         SizedBox(
           width: 530.w,
           child: Text(
-            caseStudyItem.description,
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+            caseStudyItem.shortDescription,
             textAlign: TextAlign.start,
             style: TextStyles.paragraphGrey,
           ),

@@ -3,13 +3,15 @@ class CaseStudyItemModel {
   const CaseStudyItemModel({
     required this.key,
     required this.title,
-    required this.description,
-    required this.imageName,
+    required this.shortDescription,
+    required this.imgLabelPath,
+    required this.imgDescriptionPath,
     required this.longDescription,
   });
   final String key;
   final String title;
-  final String description;
-  final String imageName;
+  final String shortDescription;
+  final String imgLabelPath;
+  final String imgDescriptionPath;
   final String longDescription;
 }

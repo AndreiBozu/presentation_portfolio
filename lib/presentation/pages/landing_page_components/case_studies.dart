@@ -66,7 +66,7 @@ class _CaseStudiesState extends State<CaseStudies> {
                     );
                   }).toList(),
                   options: CarouselOptions(
-                    height: 470.h,
+                    height: 500.h,
                     aspectRatio: 1,
                     viewportFraction: 1,
                     initialPage: 0,

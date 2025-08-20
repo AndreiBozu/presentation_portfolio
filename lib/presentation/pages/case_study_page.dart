@@ -20,9 +20,9 @@ class CaseStudyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final CaseStudyItemModel? recentWorkItem = ref.watch(caseStudyItemProvider)[id];
+    final CaseStudyItemModel? caseStudyItem = ref.watch(caseStudyItemProvider)[id];
 
-    if (recentWorkItem == null) {
+    if (caseStudyItem == null) {
       return const Scaffold(
         body: Center(child: Text('Case study item not found')),
       );
@@ -45,7 +45,7 @@ class CaseStudyPage extends ConsumerWidget {
                       children: [
                         SizedBox(height: 40.h),
                         Text(
-                          recentWorkItem.title,
+                          caseStudyItem.title,
                           style: TextStyles.sectionTitleNameBlack,
                         ),
                         SizedBox(height: 15.h),
@@ -54,16 +54,16 @@ class CaseStudyPage extends ConsumerWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.sp),
                             child: Image.asset(
-                              "assets/images/${recentWorkItem.imageName}",
+                              "assets/images/${caseStudyItem.imgDescriptionPath}",
                               fit: BoxFit.fill,
                             ),
                           ),
                         ),
                         SizedBox(height: 15.h),
                         Text(
-                          recentWorkItem.longDescription,
+                          caseStudyItem.longDescription,
                           style: TextStyles.paragraphGrey,
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
                         ),
                         SizedBox(height: 20.h),
                         SizedBox(

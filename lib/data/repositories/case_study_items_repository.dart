@@ -5,37 +5,42 @@ class RecentWorkItemsRepository {
     CaseStudyItemModel(
       key: "liveness",
       title: "Liveness detection",
-      description: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imageName: "test_image.jpg",
+      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      imgLabelPath: "test_image.jpg",
+      imgDescriptionPath: "test_image.jpg",
       longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
     ),
     CaseStudyItemModel(
       key: "nfc_document_reader",
       title: "NFC passport reader",
-      description: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imageName: "test_image.jpg",
+      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      imgLabelPath: "test_image.jpg",
+      imgDescriptionPath: "test_image.jpg",
       longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
     ),
     CaseStudyItemModel(
       key: "text_recognition",
       title: "Real time text recognition",
-      description: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imageName: "test_image.jpg",
+      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      imgLabelPath: "test_image.jpg",
+      imgDescriptionPath: "test_image.jpg",
       longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
     ),
     CaseStudyItemModel(
       key: "work 1",
       title: "Work 1",
-      description: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imageName: "test_image.jpg",
+      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      imgLabelPath: "test_image.jpg",
+      imgDescriptionPath: "test_image.jpg",
       longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
     ),
     CaseStudyItemModel(
-      key: "work 2",
-      title: "Work 2",
-      description: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imageName: "test_image.jpg",
-      longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
+      key: "math_mini_game",
+      title: "Kotlin math mini game",
+      shortDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.The app is a simple math puzzle game with multiple...",
+      imgLabelPath: "kotlin_mini_math_game_label.png",
+      imgDescriptionPath: "kotlin_math_mini_game_description.png",
+      longDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.\n\nThe app is a simple math puzzle game with multiple difficulty levels. Players must pick one of six randomly generated digits to complete the target sum. Difficulty settings control the time limit, required correct answers, and sum complexity.\n\nTo ensure fair play, the game also tracks the accuracy ratio (correct vs. incorrect answers), preventing users from progressing by repeatedly selecting the same option."
     ),
   ];
 }
