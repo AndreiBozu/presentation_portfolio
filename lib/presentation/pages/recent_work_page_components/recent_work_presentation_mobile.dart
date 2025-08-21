@@ -30,27 +30,26 @@ class RecentWorkPresentationMobile extends StatelessWidget {
           ),
         ),
         SizedBox(width: 15.w),
-        Expanded(
-          child: Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: 15.h
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    recentWorkItem.title,
-                    style: TextStyles.sectionTitleNameBlack,
-                  ),
-                  SizedBox(height: 10.h),
-                  Text(
-                    recentWorkItem.description,
-                    style: TextStyles.paragraphGrey,
-                  ),
-                ],
-              )
-          ),
+        Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: 25.h,
+              horizontal: 20.w,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  recentWorkItem.title,
+                  style: TextStyles.mobileSectionTitleNameBlack,
+                ),
+                SizedBox(height: 10.h),
+                Text(
+                  recentWorkItem.description,
+                  style: TextStyles.mobileParagraphGrey,
+                ),
+              ],
+            )
         ),
         SizedBox(height: 30.h),
         Row(
@@ -65,11 +64,12 @@ class RecentWorkPresentationMobile extends StatelessWidget {
                 textColor: Colors.white,
                 verticalPadding: 12.h,
                 horizontalPadding: 40.w,
+                textSize: 20.sp,
                 text: "App store",
                 prefixIcon: SvgPicture.asset(
                   "assets/icons/app-store.svg",
                   colorFilter: ColorFilter.mode(AppColor.white, BlendMode.srcIn),
-                  width: 21.sp,
+                  width: 25.sp,
                 )
               ),
             if(recentWorkItem.googlePlayLink != null)
@@ -81,11 +81,12 @@ class RecentWorkPresentationMobile extends StatelessWidget {
                 textColor: Colors.white,
                 horizontalPadding: 40.w,
                 verticalPadding: 12.h,
+                  textSize: 20.sp,
                 text: "Google Play",
                   prefixIcon: SvgPicture.asset(
                     "assets/icons/google-play.svg",
                     colorFilter: ColorFilter.mode(AppColor.white, BlendMode.srcIn),
-                    width: 21.sp,
+                    width: 25.sp,
                   )
               ),
             if(recentWorkItem.webLink != null)
@@ -97,11 +98,12 @@ class RecentWorkPresentationMobile extends StatelessWidget {
                 textColor: Colors.white,
                 verticalPadding: 12.h,
                 horizontalPadding: 40.w,
+                textSize: 20.sp,
                 text: "WEB",
                 prefixIcon: SvgPicture.asset(
                   "assets/icons/web.svg",
                   colorFilter: ColorFilter.mode(AppColor.white, BlendMode.srcIn),
-                  width: 21.sp,
+                  width: 25.sp,
                 )
               ),
             if(recentWorkItem.gitHubLink != null)
@@ -113,11 +115,12 @@ class RecentWorkPresentationMobile extends StatelessWidget {
                 textColor: Colors.white,
                 horizontalPadding: 40.w,
                 verticalPadding: 12.h,
+                textSize: 20.sp,
                 text: "GitHub",
                 prefixIcon: SvgPicture.asset(
                   "assets/icons/github.svg",
                   colorFilter: ColorFilter.mode(AppColor.white, BlendMode.srcIn),
-                  width: 24.sp,
+                  width: 28.sp,
                 )
               )
           ],

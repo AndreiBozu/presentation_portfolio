@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 
 import '../../core/theme/app_color.dart';
 import '../providers/recent_work_item.dart';
 import '../widgets/buttons.dart';
-import 'recent_work_page_components/extra_info.dart';
+import 'recent_work_page_components/extra_info_mobile.dart';
 import 'recent_work_page_components/recent_work_presentation_mobile.dart';
 
 
@@ -49,7 +48,7 @@ class RecentWorkMobilePage extends ConsumerWidget {
                       SizedBox(height: 40.h),
                       if(recentWorkItem.extraItemsList != null) ...[
                         for(int index = 0; index < recentWorkItem.extraItemsList!.length; index++) ...[
-                          ExtraInfo(
+                          ExtraInfoMobile(
                             item: recentWorkItem.extraItemsList![index],
                             reverse: index.isOdd,
                           )
