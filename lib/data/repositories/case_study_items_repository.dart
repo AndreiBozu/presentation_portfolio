@@ -24,10 +24,10 @@ class RecentWorkItemsRepository {
     CaseStudyItemModel(
       key: "text_recognition",
       title: "Real time text recognition",
-      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imgLabelPath: "test_image.jpg",
-      imgDescriptionPath: "test_image.jpg",
-      longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
+      shortDescription: "This project was an attempt to build a library using ML Kit to scan Australian identity documents directly on the local device, without relying on external services.\n\nThe main challenge was...",
+      imgLabelPath: "text_recognition_label.png",
+      imgDescriptionPath: "text_recognition_label.png",
+      longDescription: "This project was an attempt to build a library using ML Kit to scan Australian identity documents directly on the local device, without relying on external services.\n\nThe main challenge was data filtering: each scan can generate hundreds or even thousands of character groups. While document formats are standardized, the actual data varies significantly—for example, one person may have a single name, while another may have three or four. To address this, we implemented a probability-based validation function that analyzes multiple scan attempts and selects the most frequently occurring variant as the most likely correct result."
     ),
     CaseStudyItemModel(
       key: "work 1",
