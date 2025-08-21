@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,12 +11,17 @@ Future<void> main() async {
   usePathUrlStrategy();
   // await ScreenUtil.ensureScreenSize();
   // await AppConfig.initialize();
+  final view = PlatformDispatcher.instance.views.first;
+  final physicalSize = view.physicalSize;
+  final devicePixelRatio = view.devicePixelRatio;
+  final logicalSize = physicalSize / devicePixelRatio;
+  final double ratio = logicalSize.width/logicalSize.height;
 
   runApp(
     ProviderScope(
       child: ScreenUtilInit(
         useInheritedMediaQuery: true,
-        designSize: const Size(1280, 720),
+        designSize: ratio <= 1 ? const Size(720, 1280) : const Size(1280, 720),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (BuildContext context, child) {

@@ -8,14 +8,21 @@ class Buttons {
   static TextButton textButton({
     required String text,
     required VoidCallback? onPressed,
-    Color textColor = AppColor.grey
+    Color textColor = AppColor.grey,
+    double? horizontalPadding,
+    double? verticalPadding,
+    double? fontSize,
   }) {
+    final double hPadding = horizontalPadding ?? 18.w;
+    final double vPadding = verticalPadding ?? 24.h;
+    final double fSize = fontSize ?? 14.sp;
+
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(
-          horizontal: 18.w,
-          vertical: 24.h
+          horizontal: hPadding,
+          vertical: vPadding
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10)
@@ -26,7 +33,7 @@ class Buttons {
         style: TextStyle(
           height: 1,
           color: textColor,
-          fontSize: 14.sp,
+          fontSize: fSize,
           fontWeight: FontWeight.w400
         ),
       ),

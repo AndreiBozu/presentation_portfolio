@@ -1,6 +1,6 @@
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 
-class RecentWorkItemsRepository {
+class CaseStudyItemsRepository {
   static List<CaseStudyItemModel> data = const [
     CaseStudyItemModel(
       key: "liveness",

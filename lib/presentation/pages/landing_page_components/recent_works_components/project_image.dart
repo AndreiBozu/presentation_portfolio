@@ -12,18 +12,20 @@ class ProjectImage extends ConsumerWidget {
     required this.colorDarkTheme,
     required this.imageName,
     required this.isHovered,
-    required this.recentWorkItem
+    required this.recentWorkItem,
+    this.isMobileUi = false
   });
   final Color colorLightTheme;
   final Color colorDarkTheme;
   final String imageName;
   final bool isHovered;
   final RecentWorkModelItem recentWorkItem;
+  final bool isMobileUi;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final double width = 450.w;
-    final double height = 300.h;
+    final double width = isMobileUi ? (ScreenUtil().screenWidth * 0.8) : 450.w;
+    final double height = isMobileUi ? (width * 0.666) : 300.h;
 
     return GestureDetector(
       onTap: () {

@@ -6,10 +6,13 @@ import 'package:presentation_portfolio/data/repositories/recent_works_repository
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
 import 'package:presentation_portfolio/presentation/widgets/top_navigation_bar.dart';
 
+import '../widgets/mobile_top_navigation_bar.dart';
+import 'landing_page_components/home_mobile.dart';
 import 'landing_page_components/recent_works.dart';
 import 'landing_page_components/get_in_touch.dart';
 import 'landing_page_components/home.dart';
 import 'landing_page_components/case_studies.dart';
+import 'landing_page_components/recent_works_mobile.dart';
 import 'landing_page_components/skills.dart';
 
 class LandingPage extends StatefulWidget {
@@ -22,24 +25,27 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   final ScrollController _scrollController = ScrollController();
   final List<RecentWorkModelItem> recentWorksItems = RecentWorksRepository.data;
+  final bool isMobile = (ScreenUtil().screenWidth/ScreenUtil().screenHeight) <= 1;
   List<NavigationBarButtonModel> sections = [];
 
   @override
   void initState() {
     sections = [
       NavigationBarButtonModel(
-          key: GlobalKey(),
-          title: "Home",
-          buttonType: NavButtonType.home,
-          section: Home(
-            startFunction: () => scrollToSection(sections[1].key),
-          )
+        key: GlobalKey(),
+        title: "Home",
+        buttonType: NavButtonType.home,
+        section: isMobile ? HomeMobile(
+          startFunction: () => scrollToSection(sections[1].key),
+        ) : Home(
+          startFunction: () => scrollToSection(sections[1].key),
+        )
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Recent Works",
           buttonType: NavButtonType.caseStudies,
-          section: RecentWorks(recentWorksItems: recentWorksItems)
+          section: isMobile ? RecentWorksMobile(recentWorksItems: recentWorksItems) : RecentWorks(recentWorksItems: recentWorksItems)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
@@ -107,7 +113,12 @@ class _LandingPageState extends State<LandingPage> {
           ),
           Positioned(
             top: 0,
-            child: TopNavigationBar(
+            child: isMobile ? MobileTopNavigationBar(
+              sections: sections,
+              callBack: (NavigationBarButtonModel section) {
+                scrollToSection(section.key);
+              },
+            ) : TopNavigationBar(
               sections: sections,
               callBack: (NavigationBarButtonModel section) {
                 scrollToSection(section.key);

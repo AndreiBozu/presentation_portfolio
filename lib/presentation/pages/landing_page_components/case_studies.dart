@@ -19,7 +19,7 @@ class CaseStudies extends StatefulWidget {
 }
 
 class _CaseStudiesState extends State<CaseStudies> {
-  final List<CaseStudyItemModel> works = RecentWorkItemsRepository.data;
+  final List<CaseStudyItemModel> works = CaseStudyItemsRepository.data;
   final CarouselSliderController buttonCarouselController = CarouselSliderController();
 
 
