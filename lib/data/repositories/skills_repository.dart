@@ -79,6 +79,21 @@ class SkillsRepository {
       skillLevel: SkillLevel.good
     ),
     SkillItemModel(
+      title: "Arduino",
+      icon: "arduino",
+      skillLevel: SkillLevel.good
+    ),
+    SkillItemModel(
+      title: "Adobe Photoshop",
+      icon: "photoshop",
+      skillLevel: SkillLevel.good
+    ),
+    SkillItemModel(
+      title: "Adobe Illustrator",
+      icon: "illustrator",
+      skillLevel: SkillLevel.basic
+    ),
+    SkillItemModel(
       title: "AWS",
       icon: "aws",
       skillLevel: SkillLevel.basic
