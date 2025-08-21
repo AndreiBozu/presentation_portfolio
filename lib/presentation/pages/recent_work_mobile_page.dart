@@ -65,10 +65,11 @@ class RecentWorkMobilePage extends ConsumerWidget {
                           textColor: AppColor.white,
                           verticalPadding: 12.sp,
                           horizontalPadding: 12.sp,
+                          textSize: 21.sp,
                           suffixIcon: Icon(
                             Icons.replay_rounded,
                             color: AppColor.white,
-                            size: 21.sp,
+                            size: 25.sp,
                           )
                         ),
                       ),

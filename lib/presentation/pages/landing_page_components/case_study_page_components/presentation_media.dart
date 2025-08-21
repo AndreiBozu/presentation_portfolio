@@ -7,9 +7,11 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 class PresentationMedia extends StatefulWidget {
   const PresentationMedia({
     super.key,
-    required this.caseStudyItem
+    required this.caseStudyItem,
+    this.isMobile = false
   });
   final CaseStudyItemModel caseStudyItem;
+  final bool isMobile;
 
   @override
   State<PresentationMedia> createState() => _PresentationMediaState();
@@ -38,7 +40,7 @@ class _PresentationMediaState extends State<PresentationMedia> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400.h, width: 708.w,
+      height: (ScreenUtil().screenWidth * (widget.isMobile ? 0.9 : 0.7)) * 0.5625, width: ScreenUtil().screenWidth * (widget.isMobile ? 0.9 : 0.7),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(8.sp),
         child: widget.caseStudyItem.videoPath == null ? Image.asset(

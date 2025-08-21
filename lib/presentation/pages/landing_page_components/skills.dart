@@ -9,7 +9,11 @@ import 'package:presentation_portfolio/presentation/pages/landing_page_component
 
 
 class Skills extends StatefulWidget {
-  const Skills({super.key});
+  const Skills({
+    super.key,
+    this.isMobile = false
+  });
+  final bool isMobile;
 
   @override
   State<Skills> createState() => _SkillsState();
@@ -20,6 +24,7 @@ class _SkillsState extends State<Skills> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = widget.isMobile;
 
     return Container(
       width: ScreenUtil().screenWidth,
@@ -29,25 +34,26 @@ class _SkillsState extends State<Skills> {
       color: AppColor.black,
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 80.h),
             Text(
               "Skills",
-              style: TextStyles.sectionTitleNameWhite,
+              style: isMobile ? TextStyles.mobileSectionTitleNameWhite : TextStyles.sectionTitleNameWhite,
             ),
             SizedBox(height: 20.h),
             SizedBox(
-              width: ScreenUtil().screenWidth * 0.6,
+              width: ScreenUtil().screenWidth * (isMobile ? 0.8 : 0.6),
               child: Text(
                 Constant.skillsDescription,
                 textAlign: TextAlign.center,
-                style: TextStyles.paragraphGrey,
+                style: isMobile ? TextStyles.mobileParagraphGrey : TextStyles.paragraphGrey,
               ),
             ),
             SizedBox(height: 50.h),
-            HorizontalAutoScroller(skills: skills),
+            HorizontalAutoScroller(skills: skills, isMobile: isMobile),
             SizedBox(height: 30.h),
-            HorizontalAutoScroller(skills: skills, reverse: true),
+            HorizontalAutoScroller(skills: skills, reverse: true, isMobile: isMobile),
             SizedBox(height: 30.h),
           ],
         )

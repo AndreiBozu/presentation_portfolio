@@ -51,13 +51,13 @@ class _LandingPageState extends State<LandingPage> {
           key: GlobalKey(),
           title: "Skills",
           buttonType: NavButtonType.skills,
-          section: const Skills()
+          section: Skills(isMobile: isMobile)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Case studies",
           buttonType: NavButtonType.recentWork,
-          section: const CaseStudies()
+          section: CaseStudies(isMobile: isMobile)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),

@@ -59,27 +59,27 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
           children: [
             if(widget.reverse) ...[
               Expanded(
-                child: SizedBox(
-                  height: 504.h,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(minHeight: 504.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 20.h),
                       Text(
                         widget.item.title,
-                        style: TextStyles.recentWorkExtraItemTitle,
+                        style: TextStyles.mobileRecentWorkExtraItemTitle,
                       ),
                       SizedBox(height: 15.h),
                       Text(
                         widget.item.description,
-                        style: TextStyles.recentWorkParagraphGrey,
+                        style: TextStyles.mobileRecentWorkParagraphGrey,
                       ),
                       SizedBox(height: 20.h),
                     ],
                   ),
                 )
               ),
-              SizedBox(width: 40.w),
+              SizedBox(width: 20.w),
             ],
             SizedBox(
                 width: 300.w,
@@ -96,7 +96,7 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
                 )
             ),
             if(!widget.reverse) ...[
-              SizedBox(width: 40.w),
+              SizedBox(width: 20.w),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,12 +104,12 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
                     SizedBox(height: 20.h),
                     Text(
                       widget.item.title,
-                      style: TextStyles.recentWorkExtraItemTitle,
+                      style: TextStyles.mobileRecentWorkExtraItemTitle,
                     ),
                     SizedBox(height: 15.h),
                     Text(
                       widget.item.description,
-                      style: TextStyles.recentWorkParagraphGrey,
+                      style: TextStyles.mobileRecentWorkParagraphGrey,
                     ),
                     SizedBox(height: 20.h),
                   ],

@@ -12,10 +12,12 @@ class HorizontalAutoScroller extends StatefulWidget {
   const HorizontalAutoScroller({
     required this.skills,
     this.reverse = false,
+    this.isMobile = false,
     super.key
   });
   final List<SkillItemModel> skills;
   final bool reverse;
+  final bool isMobile;
 
   @override
   State<HorizontalAutoScroller> createState() => _HorizontalAutoScrollerState();
@@ -112,7 +114,7 @@ class _HorizontalAutoScrollerState extends State<HorizontalAutoScroller> {
                   children: [
                     SvgPicture.asset(
                       "assets/skills/${skill.icon}.svg",
-                      width: 64.sp,
+                      width: widget.isMobile ? 72.sp : 64.sp,
                       colorFilter: ColorFilter.mode(AppColor.mediumGrey, BlendMode.srcIn),
                     ),
                     SizedBox(height: 10.h),
@@ -122,7 +124,7 @@ class _HorizontalAutoScrollerState extends State<HorizontalAutoScroller> {
                         skill.title,
                         textAlign: TextAlign.center,
                         maxLines: 3,
-                        style: TextStyles.skillTitle,
+                        style: widget.isMobile ? TextStyles.mobileSkillTitle : TextStyles.skillTitle,
                       ),
                     ),
                     SizedBox(height: 10.h),
@@ -165,7 +167,7 @@ class _HorizontalAutoScrollerState extends State<HorizontalAutoScroller> {
                       levelTitle,
                       textAlign: TextAlign.center,
                       maxLines: 3,
-                      style: TextStyles.paragraphMediumGrey,
+                      style: widget.isMobile ? TextStyles.mobileParagraphMediumGrey : TextStyles.paragraphMediumGrey,
                     ),
                   ],
                 )

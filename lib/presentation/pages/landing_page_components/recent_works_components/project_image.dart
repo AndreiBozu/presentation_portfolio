@@ -30,7 +30,7 @@ class ProjectImage extends ConsumerWidget {
     return GestureDetector(
       onTap: () {
         ref.read(recentWorkItemProvider.notifier).save(recentWorkItem);
-        context.go("/recent-work/${recentWorkItem.id}");
+        context.go("/recent-work${isMobileUi ? "-mobile" : ""}/${recentWorkItem.id}");
       },
       child: SizedBox(
         width: width,

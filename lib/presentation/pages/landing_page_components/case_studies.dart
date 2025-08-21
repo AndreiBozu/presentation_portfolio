@@ -12,7 +12,11 @@ import 'case_studies_components/case_study_item.dart';
 
 
 class CaseStudies extends StatefulWidget {
-  const CaseStudies({super.key});
+  const CaseStudies({
+    super.key,
+    this.isMobile = false,
+  });
+  final bool isMobile;
 
   @override
   State<CaseStudies> createState() => _CaseStudiesState();
@@ -25,6 +29,7 @@ class _CaseStudiesState extends State<CaseStudies> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = widget.isMobile;
 
     return Container(
       width: ScreenUtil().screenWidth,
@@ -37,23 +42,23 @@ class _CaseStudiesState extends State<CaseStudies> {
           SizedBox(height: 80.h),
           Text(
             "Case studies",
-            style: TextStyles.sectionTitleNameBlack,
+            style: isMobile ? TextStyles.mobileSectionTitleNameBlack : TextStyles.sectionTitleNameBlack,
           ),
           SizedBox(height: 20.h),
           SizedBox(
-            width: ScreenUtil().screenWidth * 0.5,
+            width: ScreenUtil().screenWidth * (isMobile ? 0.8 : 0.5),
             child: Text(
               Constant.caseStudiesDescription,
               textAlign: TextAlign.center,
-              style: TextStyles.paragraphGrey,
+              style: isMobile ? TextStyles.mobileParagraphGrey : TextStyles.paragraphGrey,
             ),
           ),
-          SizedBox(height: 30.h),
+          SizedBox(height: isMobile ? 50.h : 30.h),
           Stack(
             alignment: Alignment.center,
             children: [
               SizedBox(
-                width: 900.w,
+                width: isMobile ? ScreenUtil().screenWidth : 900.w,
                 child: CarouselSlider(
                   carouselController: buttonCarouselController,
                   items: works.map((final CaseStudyItemModel workItem) {
@@ -61,6 +66,7 @@ class _CaseStudiesState extends State<CaseStudies> {
                       builder: (BuildContext context) {
                         return CaseStudyItem(
                           caseStudyItem: workItem,
+                          isMobile: isMobile,
                         );
                       }
                     );
@@ -84,7 +90,7 @@ class _CaseStudiesState extends State<CaseStudies> {
               Positioned(
                 left: 0,
                 child: Buttons.iconButton(
-                  width: 28.sp,
+                  width: isMobile ? 42.sp : 28.sp,
                   icon: "back_icon",
                   onPressed: () {
                     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -96,7 +102,7 @@ class _CaseStudiesState extends State<CaseStudies> {
               Positioned(
                 right: 0,
                 child: Buttons.iconButton(
-                  width: 28.sp,
+                    width: isMobile ? 42.sp : 28.sp,
                   icon: "forward_icon",
                   onPressed: () {
                     WidgetsBinding.instance.addPostFrameCallback((_) {

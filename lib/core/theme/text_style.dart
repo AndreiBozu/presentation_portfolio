@@ -40,6 +40,12 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     height: 1
   );
+  static final TextStyle mobileSectionTitleNameWhite = TextStyle(
+      color: AppColor.white,
+      fontSize: 38.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
+  );
   static final TextStyle paragraphGrey = TextStyle(
     color: AppColor.grey,
     fontSize: 14.sp,
@@ -58,11 +64,23 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     height: 1.6
   );
+  static final TextStyle mobileRecentWorkParagraphGrey = TextStyle(
+      color: AppColor.grey,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.6
+  );
   static final TextStyle paragraphMediumGrey = TextStyle(
     color: AppColor.mediumGrey,
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     height: 1.6
+  );
+  static final TextStyle mobileParagraphMediumGrey = TextStyle(
+      color: AppColor.mediumGrey,
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.6
   );
   static TextStyle recentWorkCompanyTitleStyle({Color textColor = AppColor.white}) {
     return TextStyle(
@@ -98,6 +116,12 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     height: 1
   );
+  static final TextStyle mobileRecentWorkExtraItemTitle = TextStyle(
+      color: AppColor.black,
+      fontSize: 25.sp,
+      fontWeight: FontWeight.w700,
+      height: 1
+  );
   static final TextStyle caseStudyProjectTitleName = TextStyle(
     color: AppColor.white,
     fontSize: 24.sp,
@@ -107,6 +131,12 @@ class TextStyles {
   static final TextStyle skillTitle = TextStyle(
     color: AppColor.mediumGrey,
     fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    height: 1.2
+  );
+  static final TextStyle mobileSkillTitle = TextStyle(
+    color: AppColor.mediumGrey,
+    fontSize: 22.sp,
     fontWeight: FontWeight.w600,
     height: 1.2
   );

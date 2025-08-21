@@ -13,8 +13,10 @@ class CaseStudyItem extends ConsumerWidget {
   const CaseStudyItem({
     super.key,
     required this.caseStudyItem,
+    this.isMobile = false
   });
   final CaseStudyItemModel caseStudyItem;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +38,7 @@ class CaseStudyItem extends ConsumerWidget {
           child: Text(
             caseStudyItem.title,
             textAlign: TextAlign.start,
-            style: TextStyles.recentWorkProjectTitleName,
+            style: isMobile ? TextStyles.mobileRecentWorkProjectTitleName : TextStyles.recentWorkProjectTitleName,
           ),
         ),
         SizedBox(height: 15.h),
@@ -47,7 +49,7 @@ class CaseStudyItem extends ConsumerWidget {
             overflow: TextOverflow.ellipsis,
             caseStudyItem.shortDescription,
             textAlign: TextAlign.start,
-            style: TextStyles.paragraphGrey,
+            style: isMobile ? TextStyles.mobileParagraphGrey : TextStyles.paragraphGrey,
           ),
         ),
         SizedBox(height: 15.h),
@@ -57,20 +59,24 @@ class CaseStudyItem extends ConsumerWidget {
             children: [
               Buttons.squareTextButton(
                   onPressed: () {
-                    context.go("/case-study/${caseStudyItem.key}");
+                    if(isMobile) {
+                      context.go("/case-study-mobile/${caseStudyItem.key}");
+                    } else {
+                      context.go("/case-study/${caseStudyItem.key}");
+                    }
                     ref.read(caseStudyItemProvider.notifier).save(caseStudyItem);
                   },
                   enableShadow: false,
                   textColor: AppColor.white,
                   backgroundColor: AppColor.greenDark,
                   text: "Learn more",
-                  textSize: 14.sp,
+                  textSize: isMobile ? 18.sp : 14.sp,
                   verticalPadding: 10.h,
                   horizontalPadding: 24.w,
                   suffixIcon: Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: AppColor.white,
-                    size: 16.sp,
+                    size: isMobile ? 21.sp : 16.sp,
                   )
               ),
               const Spacer()

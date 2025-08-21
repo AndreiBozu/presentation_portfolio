@@ -30,12 +30,13 @@ class CaseStudyItemsRepository {
       longDescription: "This project was an attempt to build a library using ML Kit to scan Australian identity documents directly on the local device, without relying on external services.\n\nThe main challenge was data filtering: each scan can generate hundreds or even thousands of character groups. While document formats are standardized, the actual data varies significantly—for example, one person may have a single name, while another may have three or four. To address this, we implemented a probability-based validation function that analyzes multiple scan attempts and selects the most frequently occurring variant as the most likely correct result."
     ),
     CaseStudyItemModel(
-      key: "work 1",
-      title: "Work 1",
+      key: "led_matrix_backpack",
+      title: "Custom wifi led matrix backpack",
       shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imgLabelPath: "test_image.jpg",
+      imgLabelPath: "d1_mini_v4.png",
       imgDescriptionPath: "test_image.jpg",
-      longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
+      longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      videoPath: "Ww2GTVFeY4k"
     ),
     CaseStudyItemModel(
       key: "math_mini_game",
