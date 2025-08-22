@@ -146,4 +146,10 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     height: 1
   );
+  static final TextStyle mobileGetInTouchResponseTitle = TextStyle(
+    color: AppColor.black,
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w700,
+    height: 1
+  );
 }

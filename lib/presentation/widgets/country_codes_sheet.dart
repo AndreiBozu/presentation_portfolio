@@ -8,10 +8,12 @@ class CountryCodesSheet extends StatefulWidget {
   const CountryCodesSheet({
     super.key,
     this.callBack,
-    required this.countryCodes
+    required this.countryCodes,
+    required this.isMobile,
   });
   final Function? callBack;
   final List<Map> countryCodes;
+  final bool isMobile;
 
   @override
   State<CountryCodesSheet> createState() => _CountryCodesSheetState();
@@ -24,10 +26,11 @@ class _CountryCodesSheetState extends State<CountryCodesSheet> {
   @override
   Widget build(BuildContext context) {
     final List listOfCountryCodes = widget.countryCodes;
+    final bool isMobile = widget.isMobile;
 
     return Container(
-      height: ScreenUtil().screenHeight * 0.6,
-      width: ScreenUtil().screenWidth * 0.4,
+      height: ScreenUtil().screenHeight * (isMobile ? 0.75 : 0.6),
+      width: ScreenUtil().screenWidth * (isMobile ? 0.9 : 0.4),
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.circular(6.sp),
@@ -65,7 +68,7 @@ class _CountryCodesSheetState extends State<CountryCodesSheet> {
                         )
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10.sp),
+                      padding: EdgeInsets.all(isMobile ? 18.sp : 10.sp),
                       child: Row(
                         children: [
                           SizedBox(
@@ -77,7 +80,7 @@ class _CountryCodesSheetState extends State<CountryCodesSheet> {
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: AppColor.black,
-                                fontSize: 16.sp,
+                                fontSize: isMobile ? 24.sp : 16.sp,
                                 fontWeight: FontWeight.w400,
                                 height: 1,
                               ),
@@ -89,7 +92,7 @@ class _CountryCodesSheetState extends State<CountryCodesSheet> {
                             semanticsLabel: "",
                             style: TextStyle(
                               color: AppColor.black,
-                              fontSize: 14.sp,
+                              fontSize: isMobile ? 21.sp : 14.sp,
                               fontWeight: FontWeight.w400,
                               height: 1,
                             ),

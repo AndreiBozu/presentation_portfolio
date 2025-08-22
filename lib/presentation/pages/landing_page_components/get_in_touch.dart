@@ -11,7 +11,11 @@ import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:presentation_portfolio/presentation/widgets/phone_textfield.dart';
 
 class GetInTouch extends StatefulWidget {
-  const GetInTouch({super.key});
+  const GetInTouch({
+    super.key,
+    this.isMobile = false
+  });
+  final bool isMobile;
 
   @override
   State<GetInTouch> createState() => _GetInTouchState();
@@ -28,6 +32,8 @@ class _GetInTouchState extends State<GetInTouch> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = widget.isMobile;
+
     return Container(
       width: ScreenUtil().screenWidth,
       height: ScreenUtil().screenHeight,
@@ -37,15 +43,15 @@ class _GetInTouchState extends State<GetInTouch> {
           SizedBox(height: 100.h),
           Text(
             "Get in Touch",
-            style: TextStyles.sectionTitleNameWhite,
+            style: isMobile ? TextStyles.mobileSectionTitleNameWhite : TextStyles.sectionTitleNameWhite,
           ),
           SizedBox(height: 20.h),
           SizedBox(
-            width: ScreenUtil().screenWidth * 0.5,
+            width: ScreenUtil().screenWidth * (isMobile ? 0.6 : 0.5),
             child: Text(
               Constant.getInTouchDescription,
               textAlign: TextAlign.center,
-              style: TextStyles.paragraphGrey,
+              style: isMobile ? TextStyles.mobileParagraphGrey : TextStyles.paragraphGrey,
             ),
           ),
           SizedBox(height: 50.h),
@@ -62,7 +68,7 @@ class _GetInTouchState extends State<GetInTouch> {
               setState(() => email = text);
             },
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: isMobile ? 40.h : 20.h),
           PhoneTextField(
             label: "Mobile (optional)",
             clearTextField: clearTextField,
@@ -70,14 +76,14 @@ class _GetInTouchState extends State<GetInTouch> {
               setState(() => phone = text);
             },
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: isMobile ? 40.h : 20.h),
           AppTextField(
             error: messageError,
             label: "Message",
             placeHolder: "Enter your message",
             clearTextField: clearTextField,
             inputType: TextInputType.text,
-            maxLines: 6,
+            maxLines: isMobile ? 10 : 6,
             onChange: (String text) {
               if(messageError) {
                 messageError = false;
@@ -85,9 +91,9 @@ class _GetInTouchState extends State<GetInTouch> {
               setState(() => message = text);
             },
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: isMobile ? 40.h : 20.h),
           SizedBox(
-            width: 350.w,
+            width: isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w,
             child: Buttons.squareTextButton(
               onPressed: () {
                 GetInTouchUseCase().validateData(
@@ -137,13 +143,13 @@ class _GetInTouchState extends State<GetInTouch> {
               textColor: AppColor.white,
               backgroundColor: AppColor.greenDark,
               text: "Submit",
-              textSize: 14.sp,
-              verticalPadding: 10.h,
+              textSize: isMobile ? 20.sp : 14.sp,
+              verticalPadding: isMobile ? 16.h : 10.h,
               horizontalPadding: 24.w,
               suffixIcon: Icon(
                 Icons.arrow_forward_ios_rounded,
                 color: AppColor.white,
-                size: 16.sp,
+                size: isMobile ? 21.sp : 16.sp,
               )
             ),
           ),

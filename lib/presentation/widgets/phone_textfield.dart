@@ -52,6 +52,8 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = (ScreenUtil().screenWidth/ScreenUtil().screenHeight) <= 1;
+
     if(widget.clearTextField) {
       controller.text = "";
     }
@@ -63,6 +65,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           return Dialog(
             child: CountryCodesSheet(
               countryCodes: countryCodes,
+              isMobile: isMobile,
               callBack: (country) {
                 setState(() {
                   selectedCountry = country;
@@ -75,14 +78,14 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
     }
 
     return SizedBox(
-      width: widget.width ?? 350.w,
+      width: widget.width ?? (isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if(widget.label != null) ...[
             Text(
               widget.label ?? "",
-              style: TextStyles.recentWorkCompanyTitleStyle(),
+              style: TextStyles.mobileRecentWorkCompanyTitleStyle(),
             ),
             SizedBox(height: 3.h),
           ],
@@ -90,11 +93,11 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
             children: [
               Container(
                 key: _key,
-                width: widget.width ?? 350.w,
+                width: widget.width ?? (isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w),
                 decoration: BoxDecoration(
-                    color: widget.error ? AppColor.error100 : widget.backgroundColor,
-                    borderRadius: BorderRadius.circular(4.sp),
-                    border: Border.all(width: widget.error ? 1 : 0, color: widget.error ? AppColor.error700 : Colors.transparent)
+                  color: widget.error ? AppColor.error100 : widget.backgroundColor,
+                  borderRadius: BorderRadius.circular(4.sp),
+                  border: Border.all(width: widget.error ? 1 : 0, color: widget.error ? AppColor.error700 : Colors.transparent)
                 ),
                 child: TextField(
                   controller: controller,
@@ -113,21 +116,21 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                     FilteringTextInputFormatter.digitsOnly,
                   ],
                   style: TextStyle(
-                      color: widget.error ? AppColor.error700 : widget.inputTextColor,
-                      fontWeight: FontWeight.w500,
-                      height: 1,
-                      fontSize: 12.sp
+                    color: widget.error ? AppColor.error700 : widget.inputTextColor,
+                    fontWeight: FontWeight.w500,
+                    height: 1,
+                    fontSize: isMobile ? 21.sp : 14.sp
                   ),
                   decoration: InputDecoration(
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(left: 64.w, top: 12.h, bottom: 12.h, right: 12.h),
-                      hintText: "731234567",
-                      hintStyle: TextStyle(
-                          height: 1,
-                          fontSize: 12.sp,
-                          color: widget.error ? AppColor.error300 : widget.placeholderTextColor,
-                          fontWeight: FontWeight.w400
-                      )
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.only(left: isMobile ? ScreenUtil().screenWidth * 0.14 : 64.w, top: 12.h, bottom: 12.h, right: 12.h),
+                    hintText: "731234567",
+                    hintStyle: TextStyle(
+                      height: 1,
+                      fontSize: isMobile ? 21.sp : 14.sp,
+                      color: widget.error ? AppColor.error300 : widget.placeholderTextColor,
+                      fontWeight: FontWeight.w400
+                    )
                   ),
                 ),
               ),
@@ -138,7 +141,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                   padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
                 ),
                 child: SizedBox(
-                  width: 60.w,
+                  width: isMobile ? ScreenUtil().screenWidth * 0.12 : 60.w,
                   height: countryCodeFieldHeight,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -146,8 +149,8 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                     children: [
                       CountryFlag.fromCountryCode(
                         selectedCountry["id"],
-                        width: 21.sp,
-                        height: 16.sp,
+                        width: isMobile ? 26.sp : 21.sp,
+                        height: isMobile ? 20.sp : 16.sp,
                         shape: RoundedRectangle(2.sp),
                       ),
                       SizedBox(width: 5.w),
@@ -156,7 +159,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                         style: TextStyle(
                           color: widget.error ? AppColor.error700 : widget.inputTextColor,
                           height: 1,
-                          fontSize: 12.sp,
+                          fontSize: isMobile ? 21.sp : 14.sp,
                           fontWeight: FontWeight.w500
                         ),
                       )

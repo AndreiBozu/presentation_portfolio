@@ -16,9 +16,11 @@ class AlertModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = (ScreenUtil().screenWidth/ScreenUtil().screenHeight) <= 1;
+
     return Container(
-      height: 450.h,
-      width: 350.w,
+      height: isMobile ? ScreenUtil().screenHeight * 0.5 : 450.h,
+      width: isMobile ? ScreenUtil().screenWidth * 0.7 : 350.w,
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.circular(6.sp),
@@ -32,18 +34,18 @@ class AlertModal extends StatelessWidget {
           Icon(
             isSuccess ? Icons.check_circle_outline_rounded : Icons.cancel_outlined,
             color: isSuccess ? AppColor.greenLight : AppColor.error300,
-            size: 124.sp,
+            size: isMobile ? 224.sp : 124.sp,
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: isMobile ? 20.h : 10.h),
           Text(
             isSuccess ? "Success" : "Error!",
-            style: TextStyles.getInTouchResponseTitle,
+            style: isMobile ? TextStyles.mobileGetInTouchResponseTitle : TextStyles.getInTouchResponseTitle,
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: isMobile ? 40.h : 20.h),
           Text(
             message,
             textAlign: TextAlign.center,
-            style: TextStyles.paragraphGrey,
+            style: isMobile ? TextStyles.mobileParagraphGrey : TextStyles.paragraphGrey,
           ),
           const Spacer(),
           SizedBox(
@@ -52,6 +54,7 @@ class AlertModal extends StatelessWidget {
               text: isSuccess ? "OK" : "CLOSE",
               backgroundColor: isSuccess ? AppColor.greenLight : AppColor.error300,
               textColor: AppColor.white,
+              textSize: isMobile ? 21.sp : 16.sp,
               verticalPadding: 12.h,
               onPressed: () => Navigator.pop(context)
             ),

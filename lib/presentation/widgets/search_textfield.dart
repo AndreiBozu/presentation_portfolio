@@ -49,6 +49,8 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = (ScreenUtil().screenWidth/ScreenUtil().screenHeight) <= 1;
+
     if(widget.defaultText != null && widget.defaultText!.isNotEmpty && widget.defaultText != _textFieldController.text) {
       setState(() => _textFieldController.text = widget.defaultText!);
     }
@@ -57,7 +59,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
     }
 
     return SizedBox(
-      width: widget.width ?? 350.w,
+      width: widget.width ?? (isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +70,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
             semanticsLabel: widget.labelText,
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 14.sp,
+              fontSize: isMobile ? 21.sp : 14.sp,
               color: AppColor.black,
               height: 1,
             ),
@@ -84,7 +86,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
                 keyboardType: TextInputType.text,
                 style: TextStyle(
                   color: AppColor.black,
-                  fontSize: 14.sp,
+                  fontSize: isMobile ? 21.sp : 14.sp,
                   fontWeight: FontWeight.w500,
                   height: 1,
                 ),
@@ -107,7 +109,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
                     ),
                     hintText: "Search",
                     hintStyle: TextStyle(
-                      fontSize: 14.sp,
+                      fontSize: isMobile ? 21.sp : 14.sp,
                       color: AppColor.grey,
                       height: 1,
                     ),
@@ -115,7 +117,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
                       top: 8.sp,
                       bottom: 8.sp,
                       right: 12.sp,
-                      left: 52.sp,
+                      left: isMobile ? ScreenUtil().screenWidth * 0.12 : 52.sp,
                     ),
                     filled: true,
                     fillColor: AppColor.lightGrey
@@ -142,7 +144,7 @@ class _SearchTextFieldState extends State<SearchTextField> with SingleTickerProv
                     child: Icon(
                       Icons.search_rounded,
                       color: focused ? AppColor.black : AppColor.grey,
-                      size: 24.sp,
+                      size: isMobile ? 32.sp : 24.sp,
                     ),
                   ),
                 ),

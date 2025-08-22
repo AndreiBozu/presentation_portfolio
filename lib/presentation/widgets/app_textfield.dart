@@ -39,24 +39,25 @@ class _AppTextFieldState extends State<AppTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = (ScreenUtil().screenWidth/ScreenUtil().screenHeight) <= 1;
     if(widget.clearTextField) {
       controller.text = "";
     }
 
     return SizedBox(
-      width: widget.width ?? 350.w,
+      width: widget.width ?? (isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if(widget.label != null) ...[
             Text(
               widget.label ?? "",
-              style: TextStyles.recentWorkCompanyTitleStyle(),
+              style: TextStyles.mobileRecentWorkCompanyTitleStyle(),
             ),
             SizedBox(height: 3.h),
           ],
           Container(
-            width: widget.width ?? 350.w,
+            width: widget.width ?? (isMobile ? ScreenUtil().screenWidth * 0.8 : 350.w),
             decoration: BoxDecoration(
               color: widget.error ? AppColor.error100 : widget.backgroundColor,
               borderRadius: BorderRadius.circular(4.sp),
@@ -73,7 +74,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 color: widget.error ? AppColor.error700 : widget.inputTextColor,
                 fontWeight: FontWeight.w500,
                 height: 1,
-                fontSize: 12.sp
+                fontSize: isMobile ? 21.sp : 14.sp
               ),
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -84,7 +85,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 hintText: widget.placeHolder,
                 hintStyle: TextStyle(
                   height: 1,
-                  fontSize: 12.sp,
+                  fontSize: isMobile ? 21.sp : 14.sp,
                   color: widget.error ? AppColor.error300 : widget.placeholderTextColor,
                   fontWeight: FontWeight.w400
                 )

@@ -63,7 +63,7 @@ class _LandingPageState extends State<LandingPage> {
           key: GlobalKey(),
           title: "Get in Touch",
           buttonType: NavButtonType.getInTouch,
-          section: const GetInTouch()
+          section: GetInTouch(isMobile: isMobile)
       ),
     ];
     super.initState();
