@@ -18,6 +18,18 @@ class RecentWorkPresentationMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Row(
+          children: [
+            SizedBox(width: 20.w),
+            Text(
+              recentWorkItem.title,
+              textAlign: TextAlign.start,
+              style: TextStyles.mobileSectionTitleNameBlack,
+            ),
+            const Spacer()
+          ],
+        ),
+        SizedBox(height: 20.h),
         SizedBox(
           width: 530.w,
           height: 300.h,
@@ -29,7 +41,6 @@ class RecentWorkPresentationMobile extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 15.w),
         Padding(
             padding: EdgeInsets.symmetric(
               vertical: 25.h,
@@ -39,10 +50,6 @@ class RecentWorkPresentationMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  recentWorkItem.title,
-                  style: TextStyles.mobileSectionTitleNameBlack,
-                ),
                 SizedBox(height: 10.h),
                 Text(
                   recentWorkItem.description,

@@ -51,6 +51,7 @@ class RecentWorkPage extends ConsumerWidget {
                           ExtraInfo(
                             item: caseStudyItem.extraItemsList![index],
                             reverse: index.isOdd,
+                            isWeb: caseStudyItem.isWeb,
                           )
                         ]
                       ],

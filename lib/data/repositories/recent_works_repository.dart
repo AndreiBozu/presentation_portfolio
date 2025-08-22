@@ -133,5 +133,66 @@ class RecentWorksRepository {
         ),
       ],
     ),
+    RecentWorkModelItem(
+      id: "study_link",
+      title: "StudyLink",
+      imagePath: "content/study_link_quiz_completion.png",
+      description: "Platform: Web (React, NodeJS, GraphQL)"
+          "\nFocus: Creating an educational platform with a strong focus on flexibility and adaptability."
+          "\n\nStudyLink is an educational platform I developed, inspired by the Moodle model. The frontend was built with React, while the backend was implemented in native Node.js using GraphQL and MongoDB."
+          "\n\nThe platform is designed around two user roles: students and teachers. Teachers can create courses and enroll students, with a high degree of flexibility in course design. They decide how many levels a course will contain, how those levels are presented, and can also create tests between levels. The testing system is highly adaptable, supporting multiple-choice questions, single-answer questions, and open-text responses."
+          "\n\nStudents can access the courses they are enrolled in, track their progress, complete tests, and view their average results for each course.",
+      shortDescription: "Platform: Web (React, NodeJS, GraphQL)"
+          "\nFocus: Creating an educational platform with a strong focus on flexibility and adaptability."
+          "\n\nStudyLink is an educational platform I developed, inspired by the Moodle model. The frontend was built with React, while the backend was implemented in native Node.js using GraphQL and MongoDB."
+          "\n\nThe platform is designed around two user roles: students and teachers. Teachers can...",
+      companyName: "Own project",
+      lightColorHex: "cd3434",
+      darkColorHex: "1321a8",
+      isWeb: true,
+      gitHubLink: "https://github.com/AndreiBozu/study-link_front-end",
+      extraItemsList: [
+        ExtraItem(
+          title: "Creating the course",
+          description: "",
+          imagePath: "content/study_link_create_course.png"
+        ),
+        ExtraItem(
+          title: "Creating the quiz",
+          description: "",
+          imagePath: "content/study_link_create_quiz.png"
+        ),
+        ExtraItem(
+          title: "Completing a quiz as a student",
+          description: "",
+          imagePath: "content/study_link_quiz_completion.png"
+        ),
+        ExtraItem(
+          title: "Courses list",
+          description: "",
+          imagePath: "content/study_link_courses_list.png"
+        ),
+        ExtraItem(
+          title: "The Course details",
+          description: "",
+          imagePath: "content/study_link_course_details.png"
+        ),
+        ExtraItem(
+          title: "The test results",
+          description: "",
+          imagePath: "content/study_link_results.png"
+        ),
+        ExtraItem(
+          title: "Sign up",
+          description: "",
+          imagePath: "content/study_link_signup.png"
+        ),
+        ExtraItem(
+          title: "Login",
+          description: "",
+          imagePath: "content/study_link_login.png"
+        )
+      ]
+    )
   ];
 }

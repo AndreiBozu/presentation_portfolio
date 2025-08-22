@@ -51,6 +51,7 @@ class RecentWorkMobilePage extends ConsumerWidget {
                           ExtraInfoMobile(
                             item: recentWorkItem.extraItemsList![index],
                             reverse: index.isOdd,
+                            isWeb: recentWorkItem.isWeb,
                           )
                         ]
                       ],

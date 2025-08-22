@@ -13,7 +13,8 @@ class RecentWorkModelItem {
     this.appStoreLink,
     this.gitHubLink,
     this.webLink,
-    required this.extraItemsList
+    required this.extraItemsList,
+    this.isWeb = false
   });
   final String id;
   final String title;
@@ -28,6 +29,7 @@ class RecentWorkModelItem {
   final String? gitHubLink;
   final String? webLink;
   final List<ExtraItem>? extraItemsList;
+  final bool isWeb;
 }
 
 class ExtraItem {
@@ -35,7 +37,7 @@ class ExtraItem {
     required this.title,
     required this.description,
     this.videoId,
-    this.imagePath
+    this.imagePath,
   });
   final String title;
   final String description;

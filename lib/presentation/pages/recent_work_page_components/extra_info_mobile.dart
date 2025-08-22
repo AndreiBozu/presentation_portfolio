@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:presentation_portfolio/core/theme/app_color.dart';
 import 'package:presentation_portfolio/core/theme/text_style.dart';
 import 'package:presentation_portfolio/data/models/recent_work_item_model.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -9,10 +10,12 @@ class ExtraInfoMobile extends StatefulWidget {
   const ExtraInfoMobile({
     super.key,
     required this.item,
-    required this.reverse
+    required this.reverse,
+    required this.isWeb
   });
   final ExtraItem item;
   final bool reverse;
+  final bool isWeb;
 
   @override
   State<ExtraInfoMobile> createState() => _ExtraInfoMobileState();
@@ -30,7 +33,7 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
     return VisibilityDetector(
       key: Key(mediaType == MediaType.video ? widget.item.videoId! : widget.item.imagePath!),
       onVisibilityChanged: (VisibilityInfo visibilityInfo) {
-        if (visibilityInfo.visibleFraction > 0.8) {
+        if (visibilityInfo.visibleFraction > 0.3) {
           Future.delayed(const Duration(milliseconds: 500), () {
             visible = true;
             controller = (mediaType == MediaType.video) ? YoutubePlayerController.fromVideoId(
@@ -54,7 +57,7 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
           vertical: 20.h,
           horizontal: 30.w
         ),
-        child: visible ? Row(
+        child: visible ? !widget.isWeb ? Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if(widget.reverse) ...[
@@ -117,7 +120,45 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
               )
             ]
           ],
-        ) : const SizedBox(),
+        ) : Column(
+          children: [
+            SizedBox(height: 20.h),
+            Text(
+              widget.item.title,
+              style: TextStyles.recentWorkExtraItemTitle,
+            ),
+            if( widget.item.description.isNotEmpty)...[
+              SizedBox(height: 15.h),
+              Text(
+                widget.item.description,
+                style: TextStyles.recentWorkParagraphGrey,
+              ),
+            ],
+            SizedBox(height: 20.h),
+            SizedBox(
+                width: ScreenUtil().screenWidth * 0.8,
+                height: (ScreenUtil().screenWidth * 0.8) / 1.77,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6.sp),
+                  child: (mediaType == MediaType.video) ? YoutubePlayer(
+                    controller: controller!,
+                    aspectRatio: 1.77,
+                  ) : Image.asset(
+                    "assets/${widget.item.imagePath}",
+                    fit: BoxFit.fill,
+                  ),
+                )
+            ),
+            SizedBox(height: 20.h),
+          ],
+        ) : Padding(
+          padding: EdgeInsets.only(bottom: 200.sp),
+          child: SizedBox(
+            height: 120.sp,
+            width: 120.sp,
+            child: CircularProgressIndicator(color: AppColor.grey),
+          ),
+        ),
       ),
     );
   }
