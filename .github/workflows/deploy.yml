@@ -5,6 +5,9 @@ on:
     branches:
       - main  # change if your branch is different
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
