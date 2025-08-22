@@ -42,11 +42,12 @@ class Buttons {
   static IconButton iconButton({
     required String icon,
     required VoidCallback? onPressed,
+    double? padding,
     double? width,
   }) {
     return IconButton(
       onPressed: onPressed,
-      padding: EdgeInsets.all(12.sp),
+      padding: EdgeInsets.all(padding ?? 12.sp),
       icon: SvgPicture.asset(
         "assets/icons/$icon.svg",
         width: width ?? 18.sp,

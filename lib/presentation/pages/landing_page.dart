@@ -34,6 +34,7 @@ class _LandingPageState extends State<LandingPage> {
       NavigationBarButtonModel(
         key: GlobalKey(),
         title: "Home",
+        mobileTitle: "Home",
         buttonType: NavButtonType.home,
         section: isMobile ? HomeMobile(
           startFunction: () => scrollToSection(sections[1].key),
@@ -44,24 +45,28 @@ class _LandingPageState extends State<LandingPage> {
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Recent Works",
+          mobileTitle: "Works",
           buttonType: NavButtonType.caseStudies,
           section: isMobile ? RecentWorksMobile(recentWorksItems: recentWorksItems) : RecentWorks(recentWorksItems: recentWorksItems)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Skills",
+          mobileTitle: "Skills",
           buttonType: NavButtonType.skills,
           section: Skills(isMobile: isMobile)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Case studies",
+          mobileTitle: "Cases",
           buttonType: NavButtonType.recentWork,
           section: CaseStudies(isMobile: isMobile)
       ),
       NavigationBarButtonModel(
           key: GlobalKey(),
           title: "Get in Touch",
+          mobileTitle: "Contact",
           buttonType: NavButtonType.getInTouch,
           section: GetInTouch(isMobile: isMobile)
       ),

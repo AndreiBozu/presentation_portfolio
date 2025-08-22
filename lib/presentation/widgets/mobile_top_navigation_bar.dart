@@ -52,7 +52,7 @@ Widget build(BuildContext context) {
             children: [
               for(final NavigationBarButtonModel section in sections) ...[
                 Buttons.textButton(
-                  text: section.title,
+                  text: section.mobileTitle,
                   horizontalPadding: 5.w,
                   fontSize: 16.sp,
                   onPressed: () => callBack(section)
@@ -67,14 +67,15 @@ Widget build(BuildContext context) {
             children: [
               Buttons.iconButton(
                 icon: "social-linkedin",
+                padding: 8.sp,
                 width: 22.sp,
                 onPressed: () {
                   launchURL(Constant.linkedinUrl);
                 }
               ),
-              SizedBox(width: 6.w),
               Buttons.iconButton(
                 icon: "github-fill",
+                padding: 8.sp,
                 width: 24.sp,
                 onPressed: () {
                   launchURL(Constant.githubUrl);

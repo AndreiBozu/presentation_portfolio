@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
@@ -49,6 +51,8 @@ class _PresentationMediaState extends State<PresentationMedia> {
         ) : YoutubePlayer(
           controller: controller!,
           aspectRatio: 1/16,
+          gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+          enableFullScreenOnVerticalDrag: false,
         )
       ),
     );

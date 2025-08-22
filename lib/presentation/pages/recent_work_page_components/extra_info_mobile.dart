@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:presentation_portfolio/core/theme/app_color.dart';
@@ -92,6 +94,8 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
                   child: (mediaType == MediaType.video) ? YoutubePlayer(
                     controller: controller!,
                     aspectRatio: 2.16,
+                    gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+                    enableFullScreenOnVerticalDrag: false,
                   ) : Image.asset(
                     "assets/${widget.item.imagePath}",
                     fit: BoxFit.fill,
@@ -143,6 +147,8 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
                   child: (mediaType == MediaType.video) ? YoutubePlayer(
                     controller: controller!,
                     aspectRatio: 1.77,
+                    gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+                    enableFullScreenOnVerticalDrag: false,
                   ) : Image.asset(
                     "assets/${widget.item.imagePath}",
                     fit: BoxFit.fill,

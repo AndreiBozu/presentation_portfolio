@@ -61,18 +61,18 @@ class CaseStudyPage extends ConsumerWidget {
                         SizedBox(
                           width: 200.w,
                           child: Buttons.squareTextButton(
-                              onPressed: () {
-                                context.go("/");
-                              },
-                              text: "Go back",
-                              textColor: AppColor.white,
-                              verticalPadding: 12.sp,
-                              horizontalPadding: 12.sp,
-                              suffixIcon: Icon(
-                                Icons.replay_rounded,
-                                color: AppColor.white,
-                                size: 21.sp,
-                              )
+                            onPressed: () {
+                              context.go("/");
+                            },
+                            text: "Go back",
+                            textColor: AppColor.white,
+                            verticalPadding: 12.sp,
+                            horizontalPadding: 12.sp,
+                            suffixIcon: Icon(
+                              Icons.replay_rounded,
+                              color: AppColor.white,
+                              size: 21.sp,
+                            )
                           ),
                         ),
                         SizedBox(height: 40.h),
