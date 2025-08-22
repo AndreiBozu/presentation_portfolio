@@ -32,15 +32,23 @@ class CaseStudyItemsRepository {
     CaseStudyItemModel(
       key: "led_matrix_backpack",
       title: "Custom wifi led matrix backpack",
-      shortDescription: "Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      imgLabelPath: "d1_mini_v4.png",
+      shortDescription: "This is a mini project where I built a 16×16 LED matrix with individually controlled LEDs. The primary goal was to mount the matrix on a backpack and control it through a mobile app capable...",
+      imgLabelPath: "led_matrix_schema.png",
       imgDescriptionPath: "test_image.jpg",
-      longDescription: "This is long description Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.",
+      longDescription: "This is a mini project where I built a 16×16 LED matrix with individually controlled LEDs. The primary goal was to mount the matrix on a backpack and control it through a mobile app capable of displaying various images and animations in 16-bit format.\n\nFor the controller, I used a Wemos Mini D1, chosen for its compact size, sufficient memory, and built-in Wi-Fi module, which enables control via a local Wi-Fi network. To stabilize the signal, I included a 220-ohm resistor and a 470µF capacitor, while brightness detection was handled with a photoresistor. Power can be supplied by any 5V source with an output of 3–5A; in my case, I used a standard power bank. Initially, I experimented with adding a speaker, but it was later removed during development.\n\nThe LED matrix supports several features, including freehand drawing, image uploading, text display, animated effects using GIFs, and even small games such as Snake, Tetris, and Runner.",
       videoPath: "Ww2GTVFeY4k"
     ),
     CaseStudyItemModel(
       key: "math_mini_game",
       title: "Kotlin math mini game",
+      shortDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.The app is a simple math puzzle game with multiple...",
+      imgLabelPath: "kotlin_mini_math_game_label.png",
+      imgDescriptionPath: "kotlin_math_mini_game_description.png",
+      longDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.\n\nThe app is a simple math puzzle game with multiple difficulty levels. Players must pick one of six randomly generated digits to complete the target sum. Difficulty settings control the time limit, required correct answers, and sum complexity.\n\nTo ensure fair play, the game also tracks the accuracy ratio (correct vs. incorrect answers), preventing users from progressing by repeatedly selecting the same option."
+    ),
+    CaseStudyItemModel(
+      key: "study_link",
+      title: "Study link",
       shortDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.The app is a simple math puzzle game with multiple...",
       imgLabelPath: "kotlin_mini_math_game_label.png",
       imgDescriptionPath: "kotlin_math_mini_game_description.png",
