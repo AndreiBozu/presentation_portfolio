@@ -43,17 +43,17 @@ class _PresentationMediaState extends State<PresentationMedia> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: (ScreenUtil().screenWidth * (widget.isMobile ? 0.9 : 0.7)) * 0.5625, width: ScreenUtil().screenWidth * (widget.isMobile ? 0.9 : 0.7),
-      child: ClipRRect(
+      child: widget.caseStudyItem.videoPath == null ? ClipRRect(
         borderRadius: BorderRadius.circular(8.sp),
-        child: widget.caseStudyItem.videoPath == null ? Image.asset(
+        child: Image.asset(
           "assets/images/${widget.caseStudyItem.imgDescriptionPath}",
           fit: BoxFit.fill,
-        ) : YoutubePlayer(
-          controller: controller!,
-          aspectRatio: 1/16,
-          gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
-          enableFullScreenOnVerticalDrag: false,
         )
+      ) : YoutubePlayer(
+        controller: controller!,
+        aspectRatio: 1/16,
+        gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+        enableFullScreenOnVerticalDrag: false,
       ),
     );
   }
