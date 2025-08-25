@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "5a7d4ea30a6c8d8fb9e83c34157e1350",
+const RESOURCES = {"flutter_bootstrap.js": "df2014470e4bb47d63bb71541c8a32c6",
 "flutter.js": "4b2350e14c6650ba82871f60906437ea",
 "favicon.png": "3adaf12cb1ba16c54d1d7adc63f1fbdd",
 "icons/Icon-maskable-512.png": "4ab70e868da93770df5de52e0ea7ce24",
@@ -22,7 +22,7 @@ const RESOURCES = {"flutter_bootstrap.js": "5a7d4ea30a6c8d8fb9e83c34157e1350",
 "canvaskit/skwasm.js.symbols": "96263e00e3c9bd9cd878ead867c04f3c",
 "canvaskit/canvaskit.wasm": "e7602c687313cfac5f495c5eac2fb324",
 "canvaskit/canvaskit.js.symbols": "efc2cd87d1ff6c586b7d4c7083063a40",
-"main.dart.js": "e76f14bf3ad9e29784e670207eecf542",
+"main.dart.js": "3a6ab9dcf81b45515715413ad4eb3163",
 "index.html": "942d23c77507af498ff20683b0ecb530",
 "/": "942d23c77507af498ff20683b0ecb530",
 "assets/packages/youtube_player_iframe/assets/player.html": "663ba81294a9f52b1afe96815bb6ecf9",
