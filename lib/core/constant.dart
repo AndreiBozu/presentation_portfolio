@@ -7,7 +7,7 @@ class Constant {
   static const String caseStudiesDescription = "The following case studies showcase projects that challenged me to grow as a developer—honing my ability to write clean, maintainable code, process and analyze data effectively, interpret technical documentation with precision, and design logical, efficient algorithms.";
   static const String getInTouchDescription = "For further information, please feel free to reach out by completing the form below or by connecting with me on LinkedIn.";
   static const String footerText = "Made with 💖";
-  static const String appVersion = "0.1.0";
+  static const String appVersion = "0.1.1";
 
   /// Get in touch form alert texts
   static const String unknownError = "Something went wrong, please try again later.";

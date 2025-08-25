@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:localstorage/localstorage.dart';
 import 'app/app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
+  await initLocalStorage();
   // await ScreenUtil.ensureScreenSize();
   // await AppConfig.initialize();
   final view = PlatformDispatcher.instance.views.first;
@@ -16,6 +18,10 @@ Future<void> main() async {
   final devicePixelRatio = view.devicePixelRatio;
   final logicalSize = physicalSize / devicePixelRatio;
   final double ratio = logicalSize.width/logicalSize.height;
+
+  localStorage.setItem("width", logicalSize.width.toString());
+  localStorage.setItem("height", logicalSize.height.toString());
+
 
   runApp(
     ProviderScope(

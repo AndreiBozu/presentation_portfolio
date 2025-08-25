@@ -89,14 +89,14 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
             SizedBox(
                 width: 300.w,
                 height: 648.h,
-                child: ClipRRect(
+                child: (mediaType == MediaType.video) ? YoutubePlayer(
+                  controller: controller!,
+                  aspectRatio: 2.16,
+                  gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+                  enableFullScreenOnVerticalDrag: false,
+                ) : ClipRRect(
                   borderRadius: BorderRadius.circular(6.sp),
-                  child: (mediaType == MediaType.video) ? YoutubePlayer(
-                    controller: controller!,
-                    aspectRatio: 2.16,
-                    gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
-                    enableFullScreenOnVerticalDrag: false,
-                  ) : Image.asset(
+                  child: Image.asset(
                     "assets/${widget.item.imagePath}",
                     fit: BoxFit.fill,
                   ),
@@ -142,14 +142,14 @@ class _ExtraInfoMobileState extends State<ExtraInfoMobile> {
             SizedBox(
                 width: ScreenUtil().screenWidth * 0.8,
                 height: (ScreenUtil().screenWidth * 0.8) / 1.77,
-                child: ClipRRect(
+                child: (mediaType == MediaType.video) ? YoutubePlayer(
+                  controller: controller!,
+                  aspectRatio: 1.77,
+                  gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
+                  enableFullScreenOnVerticalDrag: false,
+                ) : ClipRRect(
                   borderRadius: BorderRadius.circular(6.sp),
-                  child: (mediaType == MediaType.video) ? YoutubePlayer(
-                    controller: controller!,
-                    aspectRatio: 1.77,
-                    gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
-                    enableFullScreenOnVerticalDrag: false,
-                  ) : Image.asset(
+                  child: Image.asset(
                     "assets/${widget.item.imagePath}",
                     fit: BoxFit.fill,
                   ),
