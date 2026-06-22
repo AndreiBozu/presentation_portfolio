@@ -56,7 +56,7 @@ class RecentWorksRepository {
     RecentWorkModelItem(
       id: "ratify_me",
       title: "RatifyMe",
-      imagePath: "content/test-rme.png",
+      imagePath: "content/test-rme.jpg",
       shortDescription: "Role: Project Manager - Mobile Platform Migration"
           "\nPlatform: iOS & Android (Flutter)"
           "\nFocus: React Native to Flutter Migration"
@@ -99,7 +99,7 @@ class RecentWorksRepository {
     RecentWorkModelItem(
       id: "idc",
       title: "Interracial Dating Central",
-      imagePath: "content/test-idc.png",
+      imagePath: "content/test-idc.jpg",
       shortDescription: "Role: Mobile App developer"
           "\nPlatform: iOS & Android (Flutter)"
           "\nFocus: Integrated web functionality into the mobile app."

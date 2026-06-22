@@ -13,8 +13,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
   await initLocalStorage();
-  // await ScreenUtil.ensureScreenSize();
-  // await AppConfig.initialize();
   final view = PlatformDispatcher.instance.views.first;
   final physicalSize = view.physicalSize;
   final devicePixelRatio = view.devicePixelRatio;
@@ -50,6 +48,4 @@ Future<void> main() async {
       )
     )
   );
-
-  // runApp(const MyApp());
 }

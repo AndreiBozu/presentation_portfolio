@@ -7,6 +7,19 @@
 .buildlog/
 .history
 
+# macOS / OS files
+.DS_Store
+**/.DS_Store
+
+# IntelliJ / Android Studio (IDE-generated, machine-specific)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
 
 
 # Flutter repo-specific
