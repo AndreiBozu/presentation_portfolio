@@ -54,49 +54,6 @@ class RecentWorksRepository {
       ],
     ),
     RecentWorkModelItem(
-      id: "ratify_me",
-      title: "RatifyMe",
-      imagePath: "content/test-rme.jpg",
-      shortDescription: "Role: Project Manager - Mobile Platform Migration"
-          "\nPlatform: iOS & Android (Flutter)"
-          "\nFocus: React Native to Flutter Migration"
-          "\n\nAt RatifyMe, I led the migration of the mobile application from React Native to Flutter. RatifyMe is a sophisticated business organization platform with two user types: clients and individuals. Clients can request specific actions from individuals, such as completing tests, uploading documents, or scheduling meetings. Individuals receive and fulfill these requests. They have a simpler user role focused on task completion and document submission.",
-      description: "Role: Project Manager - Mobile Platform Migration"
-          "\nPlatform: iOS & Android (Flutter)"
-          "\nFocus: React Native to Flutter Migration"
-          "\n\nAt RatifyMe, I led the migration of the mobile application from React Native to Flutter. RatifyMe is a sophisticated business organization platform with two user types: clients and individuals. Clients can request specific actions from individuals, such as completing tests, uploading documents, or scheduling meetings. Individuals receive and fulfill these requests. They have a simpler user role focused on task completion and document submission."
-          "\n\nUnlike its counterpart, RatifyID, RatifyMe does not include identity verification features. As a result, it cannot confirm whether uploaded documents belong to the individual. Functionally, it serves more as a secure document wallet with added business workflow capabilities."
-          "\nThe mobile app includes only the individual-side functionality, effectively providing users with a streamlined interface for managing and submitting documents.",
-      companyName: "Makesure",
-      lightColorHex: "a6edbb",
-      darkColorHex: "19ba4a",
-      appStoreLink: "https://apps.apple.com/ro/app/ratify-compliance-wallet/id1514562109",
-      googlePlayLink: "https://play.google.com/store/apps/details?id=com.makesure.ratify",
-      webLink: "https://www.ratifyme.com/",
-      extraItemsList: [
-        ExtraItem(
-          title: "Profile",
-          description: "Developed a robust user profile management system featuring advanced editing capabilities, custom privacy settings, and avatar customization. Additionally, implemented a secure electronic signature solution supporting multiple signing methods (hand-drawn, typed, uploaded) with encrypted storage and audit trails for compliance.",
-          imagePath: "content/ratifyme_profile.jpg",
-        ),
-        ExtraItem(
-          title: "Documents",
-          description: "Developed an in-app digital wallet capable of securely storing and managing user identity documents, including government IDs, licenses, and certificates. Implemented encryption, biometric authentication, and role-based sharing controls to ensure privacy and compliance with industry security standards.",
-          imagePath: "content/ratifyme_documents.jpg",
-        ),
-        ExtraItem(
-          title: "Document preview",
-          description: "Designed an intuitive document interface allowing users to open, edit, and preview content without leaving the app. Integrated real-time preview, quick navigation, and inline editing for a smooth, user-friendly experience.",
-          imagePath: "content/ratifyme_preview_documents.jpg",
-        ),
-        ExtraItem(
-          title: "Components",
-          description: "The system includes distinct modules tailored to different types of client requests. Each module is designed to address specific requirements: some requests may involve uploading supporting documents, others require completing an interactive quiz, while certain processes demand an electronic signature. This modular approach ensures flexibility, scalability, and a streamlined user experience, allowing each request type to follow its own optimized workflow.",
-          imagePath: "content/ratifyme_components.jpg",
-        ),
-      ],
-    ),
-    RecentWorkModelItem(
       id: "social_bite",
       title: "SocialBite.",
       imagePath: "content/social_bite_bg.jpg",
@@ -157,6 +114,49 @@ class RecentWorksRepository {
               "\n\nThis model ensures maximum flexibility, making it possible to support both paid and free events within the same system while adapting to different event formats and pricing strategies."
               "\n\nFrom a technical perspective, all payments are processed using standard in-app purchase mechanisms provided by Google Play and the Apple App Store, ensuring secure and compliant transactions across both platforms.",
           imagePath: "content/sb_payment.png",
+        ),
+      ],
+    ),
+    RecentWorkModelItem(
+      id: "ratify_me",
+      title: "RatifyMe",
+      imagePath: "content/test-rme.jpg",
+      shortDescription: "Role: Project Manager - Mobile Platform Migration"
+          "\nPlatform: iOS & Android (Flutter)"
+          "\nFocus: React Native to Flutter Migration"
+          "\n\nAt RatifyMe, I led the migration of the mobile application from React Native to Flutter. RatifyMe is a sophisticated business organization platform with two user types: clients and individuals. Clients can request specific actions from individuals, such as completing tests, uploading documents, or scheduling meetings. Individuals receive and fulfill these requests. They have a simpler user role focused on task completion and document submission.",
+      description: "Role: Project Manager - Mobile Platform Migration"
+          "\nPlatform: iOS & Android (Flutter)"
+          "\nFocus: React Native to Flutter Migration"
+          "\n\nAt RatifyMe, I led the migration of the mobile application from React Native to Flutter. RatifyMe is a sophisticated business organization platform with two user types: clients and individuals. Clients can request specific actions from individuals, such as completing tests, uploading documents, or scheduling meetings. Individuals receive and fulfill these requests. They have a simpler user role focused on task completion and document submission."
+          "\n\nUnlike its counterpart, RatifyID, RatifyMe does not include identity verification features. As a result, it cannot confirm whether uploaded documents belong to the individual. Functionally, it serves more as a secure document wallet with added business workflow capabilities."
+          "\nThe mobile app includes only the individual-side functionality, effectively providing users with a streamlined interface for managing and submitting documents.",
+      companyName: "Makesure",
+      lightColorHex: "a6edbb",
+      darkColorHex: "19ba4a",
+      appStoreLink: "https://apps.apple.com/ro/app/ratify-compliance-wallet/id1514562109",
+      googlePlayLink: "https://play.google.com/store/apps/details?id=com.makesure.ratify",
+      webLink: "https://www.ratifyme.com/",
+      extraItemsList: [
+        ExtraItem(
+          title: "Profile",
+          description: "Developed a robust user profile management system featuring advanced editing capabilities, custom privacy settings, and avatar customization. Additionally, implemented a secure electronic signature solution supporting multiple signing methods (hand-drawn, typed, uploaded) with encrypted storage and audit trails for compliance.",
+          imagePath: "content/ratifyme_profile.jpg",
+        ),
+        ExtraItem(
+          title: "Documents",
+          description: "Developed an in-app digital wallet capable of securely storing and managing user identity documents, including government IDs, licenses, and certificates. Implemented encryption, biometric authentication, and role-based sharing controls to ensure privacy and compliance with industry security standards.",
+          imagePath: "content/ratifyme_documents.jpg",
+        ),
+        ExtraItem(
+          title: "Document preview",
+          description: "Designed an intuitive document interface allowing users to open, edit, and preview content without leaving the app. Integrated real-time preview, quick navigation, and inline editing for a smooth, user-friendly experience.",
+          imagePath: "content/ratifyme_preview_documents.jpg",
+        ),
+        ExtraItem(
+          title: "Components",
+          description: "The system includes distinct modules tailored to different types of client requests. Each module is designed to address specific requirements: some requests may involve uploading supporting documents, others require completing an interactive quiz, while certain processes demand an electronic signature. This modular approach ensures flexibility, scalability, and a streamlined user experience, allowing each request type to follow its own optimized workflow.",
+          imagePath: "content/ratifyme_components.jpg",
         ),
       ],
     ),
