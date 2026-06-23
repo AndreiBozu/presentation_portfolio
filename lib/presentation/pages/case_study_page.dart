@@ -8,6 +8,7 @@ import 'package:presentation_portfolio/data/models/case_study_item_model.dart';
 import 'package:presentation_portfolio/presentation/pages/landing_page_components/case_study_page_components/presentation_media.dart';
 import 'package:presentation_portfolio/presentation/widgets/buttons.dart';
 import 'package:presentation_portfolio/presentation/widgets/footer.dart';
+import 'package:presentation_portfolio/presentation/widgets/linkified_text.dart';
 
 import '../providers/case_study_item.dart';
 
@@ -52,7 +53,7 @@ class CaseStudyPage extends ConsumerWidget {
                         SizedBox(height: 15.h),
                         PresentationMedia(caseStudyItem: caseStudyItem),
                         SizedBox(height: 15.h),
-                        Text(
+                        LinkifiedText(
                           caseStudyItem.longDescription,
                           style: TextStyles.paragraphGrey,
                           textAlign: TextAlign.start,

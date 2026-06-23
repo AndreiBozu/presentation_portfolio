@@ -22,6 +22,20 @@ class CaseStudyItemsRepository {
           "\nThe process is fast, secure, and eliminates the need for manual data entry or photo uploads. It enhances the user experience during identity verification by ensuring accuracy, reducing errors, and providing a trusted way to confirm a person's identity using official government-issued documents."
     ),
     CaseStudyItemModel(
+      key: "disciplify",
+      title: "Disciplify",
+      shortDescription: "Platform: Android (Kotlin, Jetpack Compose)"
+          "\nDisciplify is a personal project developed independently to deepen my expertise in Kotlin and explore modern technologies for backend development. The project served as both a practical learning experience...",
+      imgLabelPath: "disciplify.png",
+      imgDescriptionPath: "disciplify.png",
+      longDescription: "Platform: Android (Kotlin, Jetpack Compose)"
+          "\nApk build: https://drive.google.com/file/d/1OzYFsVxE8ZJ7fpcMSgs7Is1UpHDg-PSj/view?usp=sharing"
+          "\nDisciplify is a personal project developed independently to deepen my expertise in Kotlin and explore modern technologies for backend development. The project served as both a practical learning experience and an opportunity to design and implement a complete mobile application and supporting server infrastructure from the ground up."
+          "\n\nThe application is a flexible time-tracking tool that helps users understand how they spend their time and identify opportunities to improve their daily productivity. Rather than requiring users to log every hour of the day, Disciplify focuses on tracking meaningful activities that contribute to personal habits and long-term self-improvement."
+          "\n\nUsers can create custom activity categories, each belonging to one of three predefined classifications: productive, neutral, or unproductive. This simple categorization enables the application to provide clear insights into how time is distributed across different types of activities, helping users recognize patterns and make more informed decisions about their daily routines."
+          "\n\nBy combining a clean, intuitive user experience with a flexible tracking model, Disciplify offers an effective way to monitor personal habits while demonstrating modern mobile development practices and backend architecture implemented entirely as a solo project."
+    ),
+    CaseStudyItemModel(
       key: "text_recognition",
       title: "Real time text recognition",
       shortDescription: "This project was an attempt to build a library using ML Kit to scan Australian identity documents directly on the local device, without relying on external services.The main challenge was...",
@@ -41,7 +55,8 @@ class CaseStudyItemsRepository {
     CaseStudyItemModel(
       key: "math_mini_game",
       title: "Kotlin math mini game",
-      shortDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.The app is a simple math puzzle game with multiple...",
+      shortDescription: "Platform Android (Kotlin)"
+          "\nA mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.The app is a simple math puzzle game with multiple...",
       imgLabelPath: "kotlin_mini_math_game_label.png",
       imgDescriptionPath: "kotlin_math_mini_game_description.png",
       longDescription: "A mini-project built in Kotlin to practice OOP principles and explore Android-specific tools such as fragments, view binding, and Jetpack Navigation.\n\nThe app is a simple math puzzle game with multiple difficulty levels. Players must pick one of six randomly generated digits to complete the target sum. Difficulty settings control the time limit, required correct answers, and sum complexity.\n\nTo ensure fair play, the game also tracks the accuracy ratio (correct vs. incorrect answers), preventing users from progressing by repeatedly selecting the same option."

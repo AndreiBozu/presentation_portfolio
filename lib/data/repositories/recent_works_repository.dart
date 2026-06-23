@@ -97,6 +97,70 @@ class RecentWorksRepository {
       ],
     ),
     RecentWorkModelItem(
+      id: "social_bite",
+      title: "SocialBite.",
+      imagePath: "content/social_bite_bg.jpg",
+      shortDescription: "Role: Mobile App Developer"
+          "\nPlatform: iOS & Android (Flutter)"
+          "\n\nSocialBite is a mobile application designed to bring people together through real-life social experiences, including dinners, coffee meetups, drinks, board game nights, sports activities, and other community events. The platform focuses on helping users build meaningful connections by participating in carefully organized group activities."
+          "\n\nThroughout the development of SocialBite, particular emphasis was placed on delivering an intuitive and responsive...",
+      description: "Role: Mobile App Developer"
+          "\nPlatform: iOS & Android"
+          "\n\nSocialBite is a mobile application designed to bring people together through real-life social experiences, including dinners, coffee meetups, drinks, board game nights, sports activities, and other community events. The platform focuses on helping users build meaningful connections by participating in carefully organized group activities."
+          "\n\nThroughout the development of SocialBite, particular emphasis was placed on delivering an intuitive and responsive user experience. The interface incorporates subtle animations for interactive elements, while every significant user action is accompanied by immediate visual feedback, creating a smooth and engaging interaction flow."
+          "\n\nThe application was designed with flexibility and performance as core principles. User interface components adapt dynamically to different content and configurations, while data retrieved from the backend is intelligently cached to reduce loading times and provide a fast, responsive experience. In addition, the application supports dynamic language and theme switching, allowing users to personalize the interface without restarting the application."
+          "\n\nBy combining a modern, user-centered design with optimized performance and flexible architecture, SocialBite delivers a seamless platform for discovering events, meeting new people, and fostering genuine social connections.",
+      companyName: "NextLogic",
+      lightColorHex: "FFF9F3",
+      darkColorHex: "842973",
+      googlePlayLink: "https://play.google.com/store/apps/details?id=com.nextlogic.social_bite",
+      appStoreLink: "https://apps.apple.com/ro/app/socialbite/id6754761075",
+      webLink: "https://socialbiteapp.com/",
+      extraItemsList: [
+        ExtraItem(
+          title: "Authorization",
+          description: "The app's authorization system is designed to provide a simple, secure, and user-friendly onboarding experience. Instead of relying on the traditional email and password registration process, users authenticate using their phone number. A one-time verification code is sent via SMS, allowing users to securely sign in without creating or remembering a password."
+              "\n\nIn addition to phone number authentication, the app also supports sign-in with Google and Apple, giving users multiple secure authentication options."
+              "\n\nAs part of the registration process, users complete a short personality assessment. The results of this assessment are used to help match users with the most suitable groups, improving the quality of recommendations and fostering more meaningful social connections.",
+          imagePath: "content/sb_auth.png",
+        ),
+        ExtraItem(
+          title: "Event Management",
+          description: "The app provides a comprehensive event management system designed to facilitate the organization of social experiences such as dinner gatherings, coffee meetups, brunches, sports activities, and other group events."
+              "\n\nThe event lifecycle begins with the creation and publication of an event through the administrative platform. Once published, users can browse available events and submit reservation requests to participate."
+              "\n\nApproximately 48 hours before the scheduled start time, the system automatically groups registered participants based on predefined matching criteria. Alternatively, administrators have the option to create or modify these groups manually when needed."
+              "\n\nAfter the participant groups have been finalized, the event organizer assigns each group to a selected venue through the administration platform. Once all event details, including participant groups and venue assignments, have been confirmed, the system automatically notifies all participants. The notification contains the complete event information, including the assigned venue, date and time, and any additional details required for attendance."
+              "\n\nThis workflow streamlines the organization process while ensuring that participants receive timely updates and accurate event information.",
+          videoId: "KwlFpyhNcFg",
+        ),
+        ExtraItem(
+            title: "Rating System",
+            description: "The app incorporates a comprehensive rating system that evaluates both events and user interactions. The collected ratings are used to continuously improve the participant matching process, enabling the platform to create more compatible groups for future events."
+                "\n\nFollowing each event, participants can rate one another based on their experience. When two users mutually award each other a rating of four or five stars, the system automatically establishes a connection between them. Once connected, users gain access to additional interaction features within the app, allowing them to communicate and stay in touch beyond the event."
+                "\n\nIn addition to individual interaction ratings, every user maintains an overall reputation score calculated from feedback received across all attended events. This cumulative rating reflects the user's participation quality and overall experience within the community."
+                "\n\nUsers who consistently maintain a high overall rating become eligible for exclusive membership levels, granting them access to premium groups and invitation-only events. This reputation-based progression encourages positive interactions while rewarding engaged and highly rated members with unique social opportunities.",
+            imagePath: "content/sb_rate_system.png"
+        ),
+        ExtraItem(
+            title: "Connection System and Deep Link Integration",
+            description: "The app features a lightweight connection system designed to encourage communication between users without requiring a built-in messaging platform. Rather than developing and maintaining an in-app chat system, the app leverages existing communication channels that users already rely on daily."
+                "\n\nDuring the initial onboarding process, users are invited to add their preferred contact methods, such as WhatsApp, Instagram, Messenger, email, or other supported platforms. If a phone number is associated with the user's account, it can be used to simplify the setup process and enable additional contact options, including phone calls and text messages."
+                "\n\nOnce two users establish a mutual connection through the app's rating and matching system, they gain access to each other's preferred communication methods. Users can then choose how they would like to initiate contact directly from the app."
+                "\n\nThe system utilises deep links to seamlessly launch the selected communication platform. For example, choosing WhatsApp opens a conversation with the connected user directly in the WhatsApp app, while selecting Instagram, Messenger, email, or another supported service launches the corresponding app or communication interface."
+                "\n\nThis approach significantly reduces development complexity while providing a familiar and intuitive user experience. Since users naturally transition to their preferred messaging platforms after establishing a connection, the app avoids duplicating functionality that is already available in widely adopted communication services, allowing development efforts to focus on the platform's core social and matchmaking features.",
+            imagePath: "content/sb_connections.png"
+        ),
+        ExtraItem(
+          title: "Payment System",
+          description: "The application uses a flexible ticket and subscription-based payment system designed to accommodate events with varying costs and access requirements."
+              "\n\nPayments are handled through digital “tickets” and multiple types of monthly passes. This structure allows event organizers to define how users can access specific events depending on pricing and participation rules. For each event, the organizer has full control over the entry conditions and can decide whether participation requires a specific ticket value, a particular type of pass, or whether access should be granted free of charge."
+              "\n\nThis model ensures maximum flexibility, making it possible to support both paid and free events within the same system while adapting to different event formats and pricing strategies."
+              "\n\nFrom a technical perspective, all payments are processed using standard in-app purchase mechanisms provided by Google Play and the Apple App Store, ensuring secure and compliant transactions across both platforms.",
+          imagePath: "content/sb_payment.png",
+        ),
+      ],
+    ),
+    RecentWorkModelItem(
       id: "idc",
       title: "Interracial Dating Central",
       imagePath: "content/test-idc.jpg",
